@@ -83,3 +83,56 @@ address{
   justify-content: space-between;
   align-items: flex-end;
 }
+
+.section_title{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.section_more{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.6rem;
+  color: #888;
+  transition: .3s;
+}
+
+.section_more i{
+  font-size: 1.4rem;
+}
+
+.section_more:hover{
+  background-color: #113f2e;
+}
+
+.btn_primary{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  min-width: 119px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 1.8rem;
+  transition: .3s;
+  background-color: #113f2e;
+  color: #fff;
+}
+
+.btn_event{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  min-width: 83px;
+  height: 30px;
+  padding: 0 12px;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  transition: .3s;
+  background-color: #113f2e;
+  color: #fff;
+}

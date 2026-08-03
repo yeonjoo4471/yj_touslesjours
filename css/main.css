@@ -1,0 +1,79 @@
+@font-face{
+  font-family: "noto_sans_r";
+  src: url(../font/Noto_Sans_KR/NotoSansKR-Regular.ttf);
+}
+
+@font-face{
+  font-family: "noto_sans_m";
+  src: url(../font/Noto_Sans_KR/NotoSansKR-Medium.ttf);
+}
+
+@font-face{
+  font-family: "noto_sans_s";
+  src: url(../font/Noto_Sans_KR/NotoSansKR-SemiBold.ttf);
+}
+
+@font-face{
+  font-family: "cormorant_b";
+  src: url(../font/Cormorant_Infant/CormorantInfant-Bold.ttf);
+}
+
+*,*::before,*::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: "noto_sans_r";
+  color: #222;
+  line-height: 1.5;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+ul{
+  list-style: none;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}
+
+input{
+  border: none;
+  outline: none;
+  font: inherit;
+  background-color: transparent;
+}
+
+select{
+  font: inherit;
+}
+
+address{
+  font-style: normal;
+}
+
+.inner{
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}

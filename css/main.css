@@ -77,3 +77,9 @@ address{
   margin: 0 auto;
   padding: 0 16px;
 }
+
+.section_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}

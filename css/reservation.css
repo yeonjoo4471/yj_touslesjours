@@ -78,7 +78,6 @@ address{
   margin:auto;
 }
 
-/* 공통 */
 header{
   position: fixed;
   z-index: 100;
@@ -167,7 +166,6 @@ header nav a:hover::after{
   font-size: 28px;
 }
 
-/* page shell */
 .reservation-page{ 
   padding-top:80px;
 }
@@ -268,7 +266,6 @@ header nav a:hover::after{
   font-size:14px;
 }
 
-/* heading / step */
 .page-heading{ 
   display:flex; 
   align-items:center; 
@@ -347,7 +344,6 @@ header nav a:hover::after{
   color:#fff;
 }
 
-/* cards and controls */
 .reservation-body{ 
   display:grid; 
   grid-template-columns:minmax(340px,390px) minmax(0,1fr); 
@@ -519,7 +515,6 @@ header nav a:hover::after{
   font-size:10px;
 }
 
-/* cake picker */
 .cake-picker{ 
   padding:22px;
 }
@@ -671,7 +666,6 @@ header nav a:hover::after{
   line-height:1.65;
 }
 
-/* footer */
 .site-footer{ 
   margin-top:var(--section-gap); 
   padding:52px 0 34px; 
@@ -797,7 +791,7 @@ header nav a:hover::after{
 
 /* =========================================================
 
-   1024px 이하: 공통 폭/헤더 압축
+   1024px
    
    ========================================================= */
 @media (max-width: 1024px) {
@@ -899,7 +893,6 @@ header nav a:hover::after{
     gap: 42px;
   }
 
-  /* FRESH / NATURAL / WARM / TOGETHER */
   .brand-values {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
@@ -926,7 +919,6 @@ header nav a:hover::after{
     font-size: 11px;
   }
 
-  /* SNS + 이용 안내 링크 */
   .footer-links {
     flex-direction: row-reverse;
     align-items: center;
@@ -1049,7 +1041,6 @@ header nav a:hover::after{
     height: 30px;
   }
 
-  /* form: 2열 + 고객정보 전체 폭 */
   .reservation-body {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
@@ -1123,7 +1114,6 @@ header nav a:hover::after{
     font-size: 12px;
   }
 
-  /* cake: 전체 폭 + 3열 */
   .cake-picker {
     grid-column: 1 / -1;
     margin-top: 20px;
@@ -1167,7 +1157,6 @@ header nav a:hover::after{
     padding: 22px;
   }
 
-  /* footer */
   .site-footer {
     margin-top: 130px;
     padding: 40px 0 28px;
@@ -1239,7 +1228,6 @@ header nav a:hover::after{
     font-size: 24px;
   }
 
-  /* page */
   .reservation-page {
     padding-top: 64px;
   }
@@ -1268,7 +1256,6 @@ header nav a:hover::after{
     display: none;
   }
 
-  /* 가로 넘침 방지 */
   .reservation-body,
   .reservation-form-area,
   .form-card,
@@ -1278,7 +1265,6 @@ header nav a:hover::after{
     max-width: 100%;
   }
 
-  /* heading */
   .page-heading {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
@@ -1318,7 +1304,6 @@ header nav a:hover::after{
     font-size: 14px;
   }
 
-  /* steps */
   .reservation-steps {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1346,7 +1331,6 @@ header nav a:hover::after{
     font-size: 9px;
   }
 
-  /* form: 한 열 */
   .reservation-body {
     display: flex;
     flex-direction: column;
@@ -1369,7 +1353,6 @@ header nav a:hover::after{
     font-size: 15px;
   }
 
-  /* date */
   .date-card {
     order: 0;
   }
@@ -1390,7 +1373,6 @@ header nav a:hover::after{
     font-size: 11px;
   }
 
-  /* store */
   .store-card {
     order: 1;
     margin-top: 24px;
@@ -1450,7 +1432,6 @@ header nav a:hover::after{
     font-size: 12px;
   }
 
-  /* customer */
   .customer-card {
     order: 2;
     margin-top: 24px;
@@ -1483,7 +1464,6 @@ header nav a:hover::after{
     font-size: 9px;
   }
 
-  /* cake */
   .cake-picker {
     order: 3;
     margin-top: 24px;
@@ -1565,7 +1545,6 @@ header nav a:hover::after{
     font-size: 12px;
   }
 
-  /* note */
   .order-note {
     order: 4;
     margin-top: 24px;
@@ -1588,7 +1567,6 @@ header nav a:hover::after{
     line-height: 1.5;
   }
 
-  /* footer */
   .site-footer {
     margin-top: var(--section-gap);
     padding: 34px 0 24px;

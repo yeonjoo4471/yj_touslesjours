@@ -90,7 +90,6 @@ address{
   white-space: nowrap;
 }
 
-/* header */
 header{
   position: fixed;
   z-index: 100;
@@ -179,7 +178,6 @@ header nav a:hover::after{
   font-size: 28px;
 }
 
-/* page layout */
 .sub-page{ 
   padding-top: 80px;
 }
@@ -211,7 +209,6 @@ header nav a:hover::after{
   padding-top: clamp(30px, 3vw, 52px);
 }
 
-/* sidebar common */
 .catalog-sidebar{ 
   display: flex; 
   flex-direction: column; 
@@ -389,7 +386,6 @@ header nav a:hover::after{
   font-size: 12px;
 }
 
-/* catalog content */
 .catalog-heading h2{ 
   font-family: "noto_sans_s"; 
   font-size: clamp(32px, 3vw, 42px); 
@@ -577,7 +573,6 @@ header nav a:hover::after{
   color: #fff;
 }
 
-/* footer: product section 이후 200px 간격 */
 .site-footer{ 
   margin-top: var(--section-gap); 
   padding: 52px 0 34px; 
@@ -705,7 +700,7 @@ header nav a:hover::after{
 
 /* =========================================================
 
-   1024px 이하: 공통 폭/헤더 압축
+   1024px
 
    ========================================================= */
 @media (max-width: 1024px) {
@@ -714,9 +709,6 @@ header nav a:hover::after{
     --section-gap: 150px;
   }
 
-  /* =======================================================
-     Header
-     ======================================================= */
   .inner,
   .header_i {
     width: calc(100% - 64px);
@@ -746,9 +738,6 @@ header nav a:hover::after{
     font-size: 24px;
   }
 
-  /* =======================================================
-     Catalog
-     ======================================================= */
   .sub-page {
     padding-top: 80px;
   }
@@ -829,10 +818,6 @@ header nav a:hover::after{
     font-size: 15px;
   }
 
-  /*
-    5열을 강제하지 않고, 남은 폭에 맞춰
-    3~5열로 자연스럽게 배치
-  */
   .catalog-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -872,9 +857,6 @@ header nav a:hover::after{
     margin-top: 42px;
   }
 
-  /* =======================================================
-     Footer
-     ======================================================= */
   .site-footer {
     margin-top: var(--section-gap);
     padding: 42px 0 28px;
@@ -946,7 +928,7 @@ header nav a:hover::after{
 
 /* =========================================================
 
-   768px 이하 공통
+   768px
 
    ========================================================= */
 @media (max-width: 768px){
@@ -955,7 +937,6 @@ header nav a:hover::after{
     --section-gap: clamp(80px, 12vw, 120px);
   }
 
-  /* header */
   header {
     height: clamp(64px, 9vw, 70px);
   }
@@ -974,7 +955,6 @@ header nav a:hover::after{
     width: clamp(132px, 21vw, 165px);
   }
 
-  /* 768px 이하: 메뉴 겹침 방지 */
   header nav,
   .header_util .util {
     display: none;
@@ -985,7 +965,6 @@ header nav a:hover::after{
     font-size: clamp(24px, 4vw, 28px);
   }
 
-  /* page spacing */
   .breadcrumb {
     gap: clamp(10px, 2vw, 14px);
     padding-top: clamp(28px, 5vw, 40px);
@@ -1073,7 +1052,6 @@ header nav a:hover::after{
     font-size: clamp(12px, 1.8vw, 15px);
   }
 
-  /* product card */
   .catalog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(12px, 2.5vw, 20px);
@@ -1125,7 +1103,6 @@ header nav a:hover::after{
     font-size: 13px;
   }
 
-  /* footer */
   .site-footer {
     margin-top: var(--section-gap);
     padding: 38px 0 26px;
@@ -1193,7 +1170,7 @@ header nav a:hover::after{
 
 /* =========================================================
 
-   Mobile: 480px
+   480px
    
    ========================================================= */
 @media (max-width: 480px) {
@@ -1238,7 +1215,7 @@ header nav a:hover::after{
 
 /* =========================================================
 
-   Mobile: 360px
+    360px
    
    ========================================================= */
 @media (max-width: 360px) {

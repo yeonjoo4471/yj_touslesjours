@@ -8,61 +8,444 @@
   <link rel="stylesheet" href="../css/reservation.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="inner header-inner">
-      <h1 class="brand-logo"><a href="#"><img src="./img/logo.png" alt="TOUS les JOURS"></a></h1>
-      <nav class="gnb" aria-label="주 메뉴"><ul><li><a href="#">MENU</a></li><li><a class="is-active" href="#">CAKE RESERVATION</a></li><li><a href="#">STORE</a></li><li><a href="#">EVENT</a></li><li><a href="#">BRAND</a></li><li><a href="#">CUSTOMER</a></li></ul></nav>
-      <div class="header-tools"><a class="tool-link" href="#"><i class="bi bi-search"></i><span>검색</span></a><a class="tool-link" href="#"><i class="bi bi-person"></i><span>로그인</span></a><a class="tool-link" href="#"><i class="bi bi-bag"></i><span>장바구니</span></a><button class="mobile-menu" type="button" aria-label="메뉴 열기"><i class="bi bi-list"></i></button></div>
+  <!-- header -->
+  <header>
+    <div class="header_i">
+      <!-- logo -->
+      <h1 class="logo">
+        <a href="../touslesjours.html">
+          <img src="../img/logo.png" alt="logo">
+        </a>
+      </h1>
+      <!-- /logo -->
+
+      <!-- navigation -->
+      <nav>
+        <ul>
+          <li><a href="../sub/cakemenu.html">MENU</a></li>
+          <li><a href="#" style="color: #113f2e;">CAKE RESERVATION</a></li>
+          <li><a href="#">STORE</a></li>
+          <li><a href="#">EVENT</a></li>
+          <li><a href="#">BRAND</a></li>
+          <li><a href="#">CUSTOMER</a></li>
+        </ul>
+      </nav>
+      <!-- /navigation -->
+
+      <!-- util -->
+      <div class="header_util">
+        <div class="util">
+          <a href="#" class="util_item">
+            <i class="bi bi-search"></i>
+            <span>검색</span>
+          </a>
+          <a href="#" class="util_item">
+            <i class="bi bi-person"></i>
+            <span>로그인</span>
+          </a>
+          <a href="#" class="util_item">
+            <i class="bi bi-bag"></i>
+            <span>장바구니</span>
+          </a>
+        </div>
+
+        <button type="button" class="menu_btn">
+          <i class="bi bi-list"></i>
+        </button>
+      </div>
+      <!-- /util -->
     </div>
   </header>
+  <!-- /header -->
 
   <main class="reservation-page">
     <div class="inner">
-      <nav class="breadcrumb" aria-label="현재 페이지"><a href="#" aria-label="홈"><i class="bi bi-house-door"></i></a><i class="bi bi-chevron-right"></i><a href="#">제품</a><i class="bi bi-chevron-right"></i><span aria-current="page">케이크 예약</span></nav>
+      <nav class="breadcrumb" aria-label="현재 페이지">
+        <a href="#" aria-label="홈">
+          <i class="bi bi-house-door"></i>
+        </a>
+        <i class="bi bi-chevron-right"></i>
+        <a href="#">제품</a>
+        <i class="bi bi-chevron-right"></i>
+        <span aria-current="page">케이크 예약</span>
+      </nav>
 
       <div class="reservation-layout">
         <aside class="side-menu">
-          <section class="side-box"><h2>매장 메뉴</h2><ul><li><a class="is-active" href="#">케이크 예약 <i class="bi bi-chevron-right"></i></a></li><li><a href="#">매장 찾기 <i class="bi bi-chevron-right"></i></a></li><li><a href="#">이용 안내 <i class="bi bi-chevron-right"></i></a></li><li><a href="#">자주 묻는 질문 <i class="bi bi-chevron-right"></i></a></li></ul></section>
-          <section class="side-box side-notice"><h2>안내사항</h2><ul><li>케이크 예약은 <strong>픽업 매장 방문 수령</strong>만 가능합니다.</li><li>예약 변경 및 취소는 <strong>픽업 2일 전</strong>까지 가능합니다.</li><li>성수기(크리스마스, 연말 등)에는 조기 마감될 수 있습니다.</li></ul></section>
-          <section class="side-box side-contact"><h2>고객센터</h2><strong>02-1234-5678</strong><p>평일 09:00 - 18:00</p></section>
+          <section class="side-box">
+            <h2>매장 메뉴</h2>
+            <ul>
+              <li>
+                <a class="is-active" href="#">케이크 예약 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a href="#">매장 찾기 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a href="#">이용 안내 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a href="#">자주 묻는 질문 <i class="bi bi-chevron-right"></i></a>
+              </li>
+            </ul>
+          </section>
+
+          <section class="side-box side-notice">
+            <h2>안내사항</h2>
+            <ul>
+              <li>케이크 예약은 <strong>픽업 매장 방문 수령</strong>만 가능합니다.</li>
+              <li>예약 변경 및 취소는 <strong>픽업 2일 전</strong>까지 가능합니다.</li>
+              <li>성수기(크리스마스, 연말 등)에는 조기 마감될 수 있습니다.</li>
+            </ul>
+          </section>
+
+          <section class="side-box side-contact">
+            <h2>고객센터</h2>
+            <strong>02-1234-5678</strong>
+            <p>평일 09:00 - 18:00</p>
+          </section>
         </aside>
 
         <section class="reservation-content" aria-labelledby="page-title">
-          <header class="page-heading"><div><h2 id="page-title">케이크 예약</h2><p>특별한 날, 뚜레쥬르 케이크로 행복을 준비하세요.</p></div><a class="guide-button" href="#"><i class="bi bi-signpost-split"></i> 예약 가이드</a></header>
+          <div class="page-heading">
+            <div>
+              <h2 id="page-title">케이크 예약</h2>
+              <p>특별한 날, 뚜레쥬르 케이크로 행복을 준비하세요.</p>
+            </div>
+            <a class="guide-button" href="#">
+              <i class="bi bi-signpost-split"></i> 예약 가이드
+            </a>
+          </div>
 
-          <ol class="reservation-steps"><li class="is-active"><b>1</b><span>예약 정보 선택</span></li><li><b>2</b><span>케이크 선택</span></li><li><b>3</b><span>픽업 정보 입력</span></li><li><b>4</b><span>예약 완료</span></li></ol>
+          <ol class="reservation-steps">
+            <li class="is-active">
+              <b>1</b>
+              <span>예약 정보 선택</span>
+            </li>
+            <li>
+              <b>2</b>
+              <span>케이크 선택</span>
+            </li>
+            <li>
+              <b>3</b>
+              <span>픽업 정보 입력</span>
+            </li>
+            <li>
+              <b>4</b>
+              <span>예약 완료</span>
+            </li>
+          </ol>
 
           <div class="reservation-body">
             <div class="reservation-form-area">
-              <section class="form-card date-card"><h3>1. 픽업 일자 선택</h3><div class="date-fields"><label class="field"><input type="text" placeholder="날짜를 선택해주세요."><i class="bi bi-calendar3"></i></label><label class="field"><input type="text" placeholder="시간을 선택해주세요."><i class="bi bi-chevron-down"></i></label></div></section>
-              <section class="form-card store-card"><h3>2. 픽업 매장 선택</h3><div class="store-search"><label class="field"><input type="text" placeholder="매장명을 검색해주세요."></label><button type="button">매장 찾기</button></div><div class="selected-store"><div class="store-photo"><img src="" alt="경북대병원점"></div><div><strong>경북대병원점</strong><p>대구 중구 삼덕동 2가</p><small><i class="bi bi-geo-alt-fill"></i> 810m</small></div></div><button class="change-store" type="button">매장 변경</button></section>
-              <section class="form-card customer-card"><h3>3. 받는 분 정보 <em>(선택)</em></h3><div class="customer-fields"><label>받는 분 이름<input type="text" placeholder="이름을 입력해주세요."></label><label>연락처<input type="tel" placeholder="연락처를 입력해주세요."></label></div><p>· 받는 분 정보는 주문 확인 및 안내를 위해 사용됩니다.</p></section>
+              <section class="form-card date-card">
+                <h3>1. 픽업 일자 선택</h3>
+                <div class="date-fields">
+                  <label class="field">
+                    <input type="date">
+                  </label>
+                  <label class="field">
+                    <input type="time">
+                  </label>
+                </div>
+              </section>
+
+              <section class="form-card store-card">
+                <h3>2. 픽업 매장 선택</h3>
+                <div class="store-search">
+                  <label class="field">
+                    <input type="text" placeholder="매장명을 검색해주세요.">
+                  </label>
+                  <button type="button">매장 찾기</button>
+                </div>
+                <div class="selected-store">
+                  <div class="store-photo">
+                    <img src="../img/kyungpook.jfif" alt="kyunpook">
+                  </div>
+                  <div>
+                    <strong>경북대병원점</strong>
+                    <p>대구 중구 삼덕동 2가</p>
+                    <small>
+                      <i class="bi bi-geo-alt-fill"></i> 810m
+                    </small>
+                  </div>
+                </div>
+                <button class="change-store" type="button">매장 변경</button>
+              </section>
+
+              <section class="form-card customer-card">
+                <h3>3. 받는 분 정보 <em>(선택)</em></h3>
+                <div class="customer-fields">
+                  <label>받는 분 이름
+                    <input type="text" placeholder="이름을 입력해주세요.">
+                  </label>
+                  <label>연락처
+                    <input type="tel" placeholder="연락처를 입력해주세요.">
+                  </label>
+                </div>
+                <p>· 받는 분 정보는 주문 확인 및 안내를 위해 사용됩니다.</p>
+              </section>
             </div>
 
-            <section class="cake-picker"><h3>4. 케이크 선택</h3><ul class="cake-tabs"><li><a class="is-active" href="#">전체</a></li><li><a href="#">생크림 케이크</a></li><li><a href="#">초코 케이크</a></li><li><a href="#">치즈 케이크</a></li><li><a href="#">과일 케이크</a></li><li><a href="#">조각 케이크</a></li><li><a href="#">미니 케이크</a></li></ul>
-              <ul class="cake-grid">
-                <li><article class="cake-card"><a class="cake-image" href="#"><span>BEST</span><img src="" alt="딸기 생크림 케이크"></a><h4>딸기 생크림 케이크</h4><strong>32,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><span>BEST</span><img src="" alt="초코 듬뿍 케이크"></a><h4>초코 듬뿍 케이크</h4><strong>33,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="블루베리 치즈 케이크"></a><h4>블루베리 치즈 케이크</h4><strong>30,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="샤인머스켓 생크림 케이크"></a><h4>샤인머스켓 생크림 케이크</h4><strong>34,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="떠먹는 티라미수 케이크"></a><h4>떠먹는 티라미수 케이크</h4><strong>28,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="몽블랑 케이크"></a><h4>몽블랑 케이크</h4><strong>31,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="스트로베리 치즈 케이크"></a><h4>스트로베리 치즈 케이크</h4><strong>30,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="밀크 크림 카스테라"></a><h4>밀크 크림 카스테라</h4><strong>3,800원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="미니 생크림 케이크"></a><h4>미니 생크림 케이크</h4><strong>12,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
-                <li><article class="cake-card"><a class="cake-image" href="#"><img src="" alt="프렌치 밀크 크레이프"></a><h4>프렌치 밀크 크레이프</h4><strong>26,000원</strong><button type="button" aria-label="장바구니"><i class="bi bi-cart3"></i></button></article></li>
+            <section class="cake-picker">
+              <h3>4. 케이크 선택</h3>
+              <ul class="cake-tabs">
+                <li><a class="is-active" href="#">전체</a></li>
+                <li><a href="#">생크림 케이크</a></li>
+                <li><a href="#">초코 케이크</a></li>
+                <li><a href="#">치즈 케이크</a></li>
+                <li><a href="#">과일 케이크</a></li>
+                <li><a href="#">조각 케이크</a></li>
+                <li><a href="#">미니 케이크</a></li>
               </ul>
-              <nav class="pagination" aria-label="케이크 페이지"><a href="#"><i class="bi bi-chevron-left"></i></a><a class="is-active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#"><i class="bi bi-chevron-right"></i></a></nav>
-              <button class="more-cakes" type="button">더 많은 케이크 보기 <i class="bi bi-chevron-down"></i></button>
+
+              <ul class="cake-grid">
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <span>BEST</span>
+                      <img src="../img/strawberry_cream_cake.png" alt="strawberry">
+                    </a>
+                    <h4>딸기 생크림 케이크</h4>
+                    <strong>32,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <span>BEST</span>
+                      <img src="../img/choco_cake.png" alt="choco">
+                    </a>
+                    <h4>초코 듬뿍 케이크</h4>
+                    <strong>33,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/blueberry_cake.png" alt="blueberry">
+                    </a>
+                    <h4>블루베리 치즈 케이크</h4>
+                    <strong>30,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/shinemuscat_cake.png" alt="shinemuscat">
+                    </a>
+                    <h4>샤인머스켓 생크림 케이크</h4>
+                    <strong>34,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/tiramisu_cake.png" alt="tiramisu">
+                    </a>
+                    <h4>떠먹는 티라미수 케이크</h4>
+                    <strong>28,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/montblanc_cake.png" alt="montblanc">
+                    </a>
+                    <h4>몽블랑 케이크</h4>
+                    <strong>31,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/strawberry_cheeze_cake.png" alt="cheeze">
+                    </a>
+                    <h4>스트로베리 치즈 케이크</h4>
+                    <strong>30,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/milk_cream_castella.png" alt="castella">
+                    </a>
+                    <h4>밀크 크림 카스테라</h4>
+                    <strong>3,800원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/mini_cream_cake.png" alt="minicream">
+                    </a>
+                    <h4>미니 생크림 케이크</h4>
+                    <strong>12,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+                <li>
+                  <article class="cake-card">
+                    <a class="cake-image" href="#">
+                      <img src="../img/french_milk_crape.png" alt="frenchmilkcrape">
+                    </a>
+                    <h4>프렌치 밀크 크레이프</h4>
+                    <strong>26,000원</strong>
+                    <button type="button" aria-label="장바구니">
+                      <i class="bi bi-cart3"></i>
+                    </button>
+                  </article>
+                </li>
+              </ul>
+
+              <nav class="pagination" aria-label="케이크 페이지">
+                <a href="#">
+                  <i class="bi bi-chevron-left"></i>
+                </a>
+                <a class="is-active" href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">
+                  <i class="bi bi-chevron-right"></i>
+                </a>
+              </nav>
+
+              <button class="more-cakes" type="button">
+                더 많은 케이크 보기 
+                <i class="bi bi-chevron-down"></i>
+              </button>
             </section>
           </div>
 
-          <section class="order-note"><i class="bi bi-bag-check"></i><div><h3>예약 주문 안내</h3><p>예약 주문은 픽업 매장 방문 수령만 가능합니다.<br>예약 변경 및 취소는 픽업 2일 전까지 가능합니다.</p></div></section>
+          <section class="order-note">
+            <i class="bi bi-bag-check"></i>
+            <div>
+              <h3>예약 주문 안내</h3>
+              <p>
+                예약 주문은 픽업 매장 방문 수령만 가능합니다.<br>
+                예약 변경 및 취소는 픽업 2일 전까지 가능합니다.
+              </p>
+            </div>
+          </section>
         </section>
       </div>
     </div>
   </main>
 
-  <footer class="site-footer"><div class="inner"><div class="footer-top"><ul class="brand-values"><li><i class="bi bi-leaf"></i><div><strong>FRESH</strong><p>매일 새롭게<br>정직한 재료</p></div></li><li><i class="bi bi-flower1"></i><div><strong>NATURAL</strong><p>자연의 건강함을<br>담은 베이커리</p></div></li><li><i class="bi bi-heart"></i><div><strong>WARM</strong><p>따뜻하고 편안한<br>일상의 순간</p></div></li><li><i class="bi bi-people"></i><div><strong>TOGETHER</strong><p>고객과 함께 만드는<br>특별한 경험</p></div></li></ul><div class="footer-links"><ul class="social-list"><li><a href="#"><i class="bi bi-instagram"></i></a></li><li><a href="#"><i class="bi bi-facebook"></i></a></li><li><a href="#"><i class="bi bi-youtube"></i></a></li><li><a href="#"><i class="bi bi-google"></i></a></li></ul><nav><a href="#">고객센터</a><a href="#">이용안내</a><a href="#">회사소개</a></nav></div></div><div class="footer-bottom"><div class="policy"><a href="#">이용약관</a><a href="#">개인정보처리방침</a><a href="#">위치기반 서비스 이용약관</a><a href="#">전자금융거래 이용약관</a></div><address>CJ푸드빌(주) <span>대표이사 : 이건일</span><span>사업자등록번호 : 312-81-42519</span><br>서울시 중구 마른내로34(초동 106-9번지) KT&amp;G을지로타워 3, 9, 11층 CJ푸드빌(주)</address><p>COPYRIGHT 2026©CJ Foodville ALL RIGHT RESERVED.</p></div></div></footer>
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="footer-top">
+        <ul class="brand-values">
+          <li>
+            <i class="bi bi-leaf"></i>
+            <div>
+              <strong>FRESH</strong>
+              <p>매일 새롭게<br>
+                정직한 재료
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-flower1"></i>
+            <div>
+              <strong>NATURAL</strong>
+              <p>
+                자연의 건강함을<br>
+                담은 베이커리
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-heart"></i>
+            <div>
+              <strong>WARM</strong>
+              <p>
+                따뜻하고 편안한<br>
+                일상의 순간
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-people"></i>
+            <div>
+              <strong>TOGETHER</strong>
+              <p>
+                고객과 함께 만드는<br>
+                특별한 경험
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <div class="footer-links">
+          <ul class="social-list">
+            <li>
+              <a href="#"><i class="bi bi-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-facebook"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-youtube"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="bi bi-google"></i></a>
+            </li>
+          </ul>
+
+          <nav>
+            <a href="#">고객센터</a>
+            <a href="#">이용안내</a>
+            <a href="#">회사소개</a>
+          </nav>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="policy">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">위치기반 서비스 이용약관</a>
+          <a href="#">전자금융거래 이용약관</a>
+        </div>
+        <address>CJ푸드빌(주) 
+          <span>대표이사 : 이건일</span>
+          <span>사업자등록번호 : 312-81-42519</span>
+          <br>서울시 중구 마른내로34(초동 106-9번지) KT&amp;G을지로타워 3, 9, 11층 CJ푸드빌(주)
+        </address>
+        <p>
+          COPYRIGHT 2026©CJ Foodville ALL RIGHT RESERVED.
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

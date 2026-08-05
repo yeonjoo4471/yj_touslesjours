@@ -1,8 +1,19 @@
-@font-face { font-family: "noto_sans_r"; src: url("../font/Noto_Sans_KR/NotoSansKR-Regular.ttf"); }
-@font-face { font-family: "noto_sans_m"; src: url("../font/Noto_Sans_KR/NotoSansKR-Medium.ttf"); }
-@font-face { font-family: "noto_sans_s"; src: url("../font/Noto_Sans_KR/NotoSansKR-SemiBold.ttf"); }
+@font-face{ 
+  font-family: "noto_sans_r"; 
+  src: url("../font/Noto_Sans_KR/NotoSansKR-Regular.ttf");
+}
 
-:root {
+@font-face{ 
+  font-family: "noto_sans_m"; 
+  src: url("../font/Noto_Sans_KR/NotoSansKR-Medium.ttf");
+}
+
+@font-face{ 
+  font-family: "noto_sans_s"; 
+  src: url("../font/Noto_Sans_KR/NotoSansKR-SemiBold.ttf");
+}
+
+:root{
   --green: #113f2e;
   --green-dark: #0b3022;
   --cream: #f8f4eb;
@@ -16,459 +27,1253 @@
   --section-gap: 200px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { min-width: 320px; overflow-x: hidden; color: var(--text); font-family: "noto_sans_r", sans-serif; line-height: 1.5; word-break: keep-all; }
-a { color: inherit; text-decoration: none; }
-ul { list-style: none; }
-img { display: block; max-width: 100%; }
-button, input, select { border: 0; outline: 0; background: transparent; font: inherit; }
-button { cursor: pointer; }
-address { font-style: normal; }
-.inner { width: min(var(--content-width), calc(100% - (var(--side-space) * 2))); margin: 0 auto; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); margin: -1px; white-space: nowrap; }
+*,*::before,*::after{ 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html{ 
+  scroll-behavior: smooth;
+}
+
+body{ 
+  min-width: 320px; 
+  overflow-x: hidden; 
+  color: var(--text); 
+  font-family: "noto_sans_r";
+  line-height: 1.5; 
+  word-break: keep-all;
+}
+
+a{ 
+  color: inherit; 
+  text-decoration: none;
+}
+
+ul{ 
+  list-style: none;
+}
+
+img{ 
+  display: block; 
+  max-width: 100%;
+}
+
+button,input,select{ 
+  border: 0; 
+  outline: 0; 
+  background: transparent; 
+  font: inherit;
+}
+
+button{
+  cursor: pointer;
+}
+
+address{ 
+  font-style: normal;
+}
+
+.inner{ 
+  width: min(var(--content-width), calc(100% - (var(--side-space) * 2))); 
+  margin: 0 auto;
+}
+
+.sr-only{ 
+  position: absolute; 
+  width: 1px; 
+  height: 1px; 
+  overflow: hidden; 
+  clip: rect(0, 0, 0, 0); 
+  margin: -1px; 
+  white-space: nowrap;
+}
 
 /* header */
-.site-header { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 80px; border-bottom: 1px solid #f0eeea; background: rgba(255,255,255,.97); }
-.header-inner { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; height: 100%; }
-.brand-logo { width: clamp(150px, 11vw, 210px); }
-.brand-logo a { display: block; }
-.gnb ul { display: flex; align-items: center; gap: clamp(22px, 2.2vw, 42px); }
-.gnb a { position: relative; display: block; font-family: "noto_sans_m"; font-size: 12px; white-space: nowrap; }
-.gnb a::after { position: absolute; bottom: -8px; left: 0; width: 0; height: 2px; background: var(--green); content: ""; transition: width .2s; }
-.gnb a:hover::after, .gnb a.is-active::after { width: 100%; }
-.gnb a.is-active { color: var(--green); }
-.header-tools { display: flex; justify-content: flex-end; align-items: center; }
-.tool-link { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 46px; font-size: 10px; }
-.tool-link + .tool-link { margin-left: clamp(12px, 1.8vw, 28px); }
-.tool-link i { color: var(--green); font-size: 21px; line-height: 1; }
-.mobile-menu { display: none; margin-left: 14px; color: var(--green); font-size: 28px; }
+header{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, .97);
+}
+
+.header_i{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: min(var(--content-width), calc(100% - (var(--side-space) * 2)));
+  height: 100%;
+  margin: 0 auto;
+}
+
+.logo{ 
+  width: clamp(150px, 11vw, 195px);
+}
+
+.logo a{ 
+  display: block;
+}
+
+header nav ul{
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 2.2vw, 42px);
+}
+
+header nav a{
+  position: relative;
+  display: block;
+  font-family: "noto_sans_m";
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+header nav a::after{
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  content: "";
+  transition: width .2s;
+}
+
+header nav a:hover::after{ 
+  width: 100%;
+}
+
+.header_util{ 
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.util{ 
+  display: flex; 
+  align-items: center; 
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.util_item{ 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 3px; 
+  font-size: 10px;
+}
+
+.util_item i{ 
+  color: var(--green); 
+  font-size: 21px; 
+  line-height: 1;
+}
+
+.menu_btn{ 
+  display: none; 
+  color: var(--green); 
+  font-size: 28px;
+}
 
 /* page layout */
-.sub-page { padding-top: 80px; }
-.breadcrumb { display: flex; align-items: center; gap: 15px; padding-top: clamp(38px, 5vw, 76px); color: #999; font-size: 14px; }
-.breadcrumb > i { color: #bbb; font-size: 14px; }
-.breadcrumb a:first-child { color: #aaa; font-size: 21px; }
-.catalog-layout { display: grid; grid-template-columns: 270px minmax(0,1fr); align-items: start; gap: clamp(48px, 6vw, 100px); padding-top: clamp(30px, 3vw, 52px); }
+.sub-page{ 
+  padding-top: 80px;
+}
+
+.breadcrumb{ 
+  display: flex; 
+  align-items: center; 
+  gap: 15px; 
+  padding-top: clamp(38px, 5vw, 76px); 
+  color: #999; 
+  font-size: 14px;
+}
+
+.breadcrumb > i{ 
+  color: #bbb; 
+  font-size: 14px;
+}
+
+.breadcrumb a:first-child{ 
+  color: #aaa; 
+  font-size: 21px;
+}
+
+.catalog-layout{ 
+  display: grid; 
+  grid-template-columns: 270px minmax(0,1fr); 
+  align-items: start; 
+  gap: clamp(48px, 6vw, 100px); 
+  padding-top: clamp(30px, 3vw, 52px);
+}
 
 /* sidebar common */
-.catalog-sidebar { display: flex; flex-direction: column; gap: 30px; }
-.side-box, .reservation-card { border-radius: var(--radius); background: var(--cream); }
-.side-box { padding: 28px 24px; }
-.side-title { padding-bottom: 16px; border-bottom: 1px solid #dfdcd4; color: var(--green); font-family: "noto_sans_s"; font-size: 22px; letter-spacing: -1.2px; }
-.side-category-list { padding-top: 10px; }
-.side-category-list li + li { margin-top: 4px; }
-.side-category-list a { display: flex; align-items: center; justify-content: space-between; min-height: 46px; padding: 0 10px; border-radius: 8px; font-family: "noto_sans_m"; font-size: 16px; }
-.side-category-list a:hover, .side-category-list a.is-active { background: #e6e5dd; color: var(--green); }
-.side-category-list i { color: #888; font-size: 15px; }
-.filter-box { padding-bottom: 26px; }
-.filter-group { padding: 21px 0 0; }
-.filter-group + .filter-group { margin-top: 5px; }
-.filter-group h3 { margin-bottom: 13px; font-family: "noto_sans_s"; font-size: 17px; }
-.price-range { position: relative; height: 24px; margin: 12px 8px 0; }
-.range-line { position: absolute; top: 11px; right: 0; left: 0; height: 3px; border-radius: 3px; background: var(--green); }
-.range-thumb { position: absolute; top: 2px; width: 21px; height: 21px; border: 2px solid var(--green); border-radius: 50%; background: #fff; }
-.range-thumb.is-start { left: -2px; }
-.range-thumb.is-end { right: -2px; }
-.price-label { display: flex; justify-content: space-between; margin-top: 2px; font-family: "noto_sans_m"; font-size: 12px; }
-.check-label { display: flex; align-items: center; gap: 11px; margin-top: 9px; cursor: pointer; font-size: 14px; }
-.check-label input { width: 18px; height: 18px; appearance: none; border: 1px solid #d4d1c9; background: #fff; }
-.check-label input:checked { border-color: var(--green); background: var(--green); box-shadow: inset 0 0 0 3px #fff; }
-.reservation-card { display: flex; align-items: center; justify-content: space-between; min-height: 178px; padding: 26px 22px; color: var(--green); }
-.reservation-card h2 { font-family: "noto_sans_s"; font-size: 21px; }
-.reservation-card p { margin-top: 11px; color: #333; font-size: 14px; line-height: 1.65; }
-.reservation-card > i { font-size: 52px; }
-.outline-button { display: inline-flex; align-items: center; justify-content: center; height: 30px; margin-top: 12px; padding: 0 12px; border: 1px solid #c9cec9; border-radius: 5px; background: #fff; font-family: "noto_sans_m"; font-size: 12px; }
+.catalog-sidebar{ 
+  display: flex; 
+  flex-direction: column; 
+  gap: 30px;
+}
+
+.side-box, 
+.reservation-card{ 
+  border-radius: var(--radius); 
+  background: var(--cream);
+}
+
+.side-box{ 
+  padding: 28px 24px;
+}
+
+.side-title{ 
+  padding-bottom: 16px; 
+  border-bottom: 1px solid #dfdcd4; 
+  color: var(--green); 
+  font-family: "noto_sans_s"; 
+  font-size: 22px; 
+  letter-spacing: -1.2px;
+}
+
+.side-category-list{ 
+  padding-top: 10px;
+}
+
+.side-category-list li + li{ 
+  margin-top: 4px; 
+}
+
+.side-category-list a{ 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  min-height: 46px; 
+  padding: 0 10px; 
+  border-radius: 8px; 
+  font-family: "noto_sans_m"; 
+  font-size: 16px;
+}
+
+.side-category-list a:hover,
+.side-category-list a.is-active{ 
+  background: #e6e5dd; 
+  color: var(--green);
+}
+
+.side-category-list i{ 
+  color: #888; 
+  font-size: 15px;
+}
+
+.filter-box{ 
+  padding-bottom: 26px;
+}
+
+.filter-group{ 
+  padding: 21px 0 0;
+}
+
+.filter-group + .filter-group{ 
+  margin-top: 5px;
+}
+
+.filter-group h3{ 
+  margin-bottom: 13px; 
+  font-family: "noto_sans_s"; 
+  font-size: 17px;
+}
+
+.price-range{ 
+  position: relative; 
+  height: 24px; 
+  margin: 12px 8px 0;
+}
+
+.range-line{ 
+  position: absolute; 
+  top: 11px; 
+  right: 0; 
+  left: 0; 
+  height: 3px; 
+  border-radius: 3px; 
+  background: var(--green);
+}
+
+.range-thumb{ 
+  position: absolute; 
+  top: 2px; 
+  width: 21px; 
+  height: 21px; 
+  border: 2px solid var(--green); 
+  border-radius: 50%; 
+  background: #fff;
+}
+
+.range-thumb.is-start{ 
+  left: -2px;
+}
+
+.range-thumb.is-end{ 
+  right: -2px;
+}
+
+.price-label{ 
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 2px; 
+  font-family: "noto_sans_m"; 
+  font-size: 12px;
+}
+
+.check-label{ 
+  display: flex; 
+  align-items: center; 
+  gap: 11px; 
+  margin-top: 9px; 
+  cursor: pointer; 
+  font-size: 14px;
+}
+
+.check-label input{ 
+  width: 18px; 
+  height: 18px; 
+  appearance: none; 
+  border: 1px solid #d4d1c9; 
+  background: #fff;
+}
+
+.check-label input:checked{ 
+  border-color: var(--green); 
+  background: var(--green); 
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.reservation-card{ 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  min-height: 178px; 
+  padding: 26px 22px; 
+  color: var(--green);
+}
+
+.reservation-card h2{ 
+  font-family: "noto_sans_s"; 
+  font-size: 21px;
+}
+
+.reservation-card p{ 
+  margin-top: 11px; 
+  color: #333; 
+  font-size: 14px; 
+  line-height: 1.65;
+}
+
+.reservation-card > i{ 
+  font-size: 52px; 
+}
+
+.outline-button{ 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: 30px; 
+  margin-top: 12px; 
+  padding: 0 12px; 
+  border: 1px solid #c9cec9; 
+  border-radius: 5px; 
+  background: #fff; 
+  font-family: "noto_sans_m"; 
+  font-size: 12px;
+}
 
 /* catalog content */
-.catalog-heading h2 { font-family: "noto_sans_s"; font-size: clamp(32px, 3vw, 42px); letter-spacing: -2px; line-height: 1.2; }
-.catalog-heading p { margin-top: 7px; color: #333; font-size: 18px; letter-spacing: -.8px; }
-.catalog-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 22px; margin-top: 31px; padding-bottom: 23px; border-bottom: 1px solid var(--line); }
-.product-tabs { display: flex; align-items: center; gap: clamp(16px, 2vw, 32px); }
-.product-tabs a { display: block; padding: 7px 0; font-family: "noto_sans_m"; font-size: 15px; white-space: nowrap; }
-.product-tabs a.is-active { padding: 7px 15px; border-radius: 20px; background: var(--green); color: #fff; }
-.sort-select { position: relative; flex: 0 0 180px; }
-.sort-select::after { position: absolute; top: 50%; right: 17px; color: #555; content: "\F282"; font-family: "bootstrap-icons"; pointer-events: none; transform: translateY(-50%); }
-.sort-select select { width: 100%; height: 46px; padding: 0 46px 0 16px; border: 1px solid #d7d4ce; border-radius: 8px; background: #fff; color: #555; font-size: 15px; appearance: none; }
-.product-count { margin-top: 34px; color: #777; font-size: 17px; }
-.product-count strong { color: var(--green); font-family: "noto_sans_s"; }
-.catalog-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: clamp(20px, 2.1vw, 34px) clamp(14px, 1.8vw, 28px); margin-top: 27px; }
-.catalog-card { position: relative; height: 100%; overflow: hidden; padding: 16px; border-radius: 14px; background: var(--cream); transition: transform .25s, box-shadow .25s; }
-.catalog-card:hover { transform: translateY(-5px); box-shadow: 0 14px 25px rgba(32,48,37,.12); }
-.product-image { position: relative; display: flex; align-items: center; justify-content: center; height: clamp(180px, 13.5vw, 255px); }
-.product-image img { width: 88%; height: 88%; object-fit: contain; }
-.best-badge { position: absolute; z-index: 1; top: 0; left: 0; padding: 3px 9px; border: 1px solid #ff9b7b; border-radius: 4px; background: #ffe9e2; color: #f17d5b; font-size: 11px; }
-.catalog-info { margin-top: 11px; padding-right: 24px; }
-.catalog-info h3 { overflow: hidden; font-family: "noto_sans_m"; font-size: clamp(14px, 1vw, 16px); letter-spacing: -.8px; text-overflow: ellipsis; white-space: nowrap; }
-.catalog-info strong { display: block; margin-top: 5px; font-family: "noto_sans_s"; font-size: clamp(15px, 1.15vw, 18px); }
-.cart-button { position: absolute; right: 16px; bottom: 16px; color: var(--green); font-size: 18px; }
-.pagination { display: flex; justify-content: center; gap: 12px; margin-top: 55px; }
-.pagination a { display: inline-flex; align-items: center; justify-content: center; width: 32px; height: 32px; border: 1px solid #d9d9d9; border-radius: 7px; font-family: "noto_sans_m"; font-size: 15px; }
-.pagination a.is-active { border-color: var(--green); background: var(--green); color: #fff; }
+.catalog-heading h2{ 
+  font-family: "noto_sans_s"; 
+  font-size: clamp(32px, 3vw, 42px); 
+  letter-spacing: -2px; 
+  line-height: 1.2;
+}
+
+.catalog-heading p{ 
+  margin-top: 7px; 
+  color: #333; 
+  font-size: 18px; 
+  letter-spacing: -.8px;
+}
+
+.catalog-toolbar{ 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 22px; 
+  margin-top: 31px; 
+  padding-bottom: 23px; 
+  border-bottom: 1px solid var(--line);
+}
+
+.product-tabs{ 
+  display: flex; 
+  align-items: center; 
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.product-tabs a{ 
+  display: block; 
+  padding: 7px 0; 
+  font-family: "noto_sans_m"; 
+  font-size: 15px; 
+  white-space: nowrap;
+}
+
+.product-tabs a.is-active{ 
+  padding: 7px 15px; 
+  border-radius: 20px; 
+  background: var(--green); 
+  color: #fff;
+}
+
+.sort-select{ 
+  position: relative; 
+  flex: 0 0 180px;
+}
+
+.sort-select::after{ 
+  position: absolute; 
+  top: 50%; 
+  right: 17px; 
+  color: #555; 
+  content: "\F282"; 
+  font-family: "bootstrap-icons"; 
+  pointer-events: none; 
+  transform: translateY(-50%);
+}
+
+.sort-select select{ 
+  width: 100%; 
+  height: 46px; 
+  padding: 0 46px 0 16px; 
+  border: 1px solid #d7d4ce; 
+  border-radius: 8px; 
+  background: #fff; 
+  color: #555; 
+  font-size: 15px; 
+  appearance: none;
+}
+
+.product-count{ 
+  margin-top: 34px; 
+  color: #777; 
+  font-size: 17px;
+}
+
+.product-count strong{ 
+  color: var(--green); 
+  font-family: "noto_sans_s";
+}
+
+.catalog-grid{ 
+  display: grid; 
+  grid-template-columns: repeat(5,minmax(0,1fr)); 
+  gap: clamp(20px, 2.1vw, 34px) clamp(14px, 1.8vw, 28px); 
+  margin-top: 27px;
+}
+
+.catalog-card{ 
+  position: relative; 
+  height: 100%; 
+  overflow: hidden; 
+  padding: 16px; 
+  border-radius: 14px; 
+  background: var(--cream); 
+  transition: transform .25s, box-shadow .25s;
+}
+
+.catalog-card:hover{ 
+  transform: translateY(-5px); 
+  box-shadow: 0 14px 25px rgba(32,48,37,.12);
+}
+
+.product-image{ 
+  position: relative; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  height: clamp(180px, 13.5vw, 255px);
+}
+
+.product-image img{ 
+  width: 88%; 
+  height: 88%; 
+  object-fit: contain;
+}
+
+.best-badge{ 
+  position: absolute; 
+  z-index: 1; 
+  top: 0; 
+  left: 0; 
+  padding: 3px 9px; 
+  border: 1px solid #ff9b7b; 
+  border-radius: 4px; 
+  background: #ffe9e2; 
+  color: #f17d5b; 
+  font-size: 11px;
+}
+
+.catalog-info{ 
+  margin-top: 11px; 
+  padding-right: 24px;
+}
+
+.catalog-info h3{ 
+  overflow: hidden; 
+  font-family: "noto_sans_m"; 
+  font-size: clamp(14px, 1vw, 16px); 
+  letter-spacing: -.8px; 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
+
+.catalog-info strong{ 
+  display: block; 
+  margin-top: 5px; 
+  font-family: "noto_sans_s"; 
+  font-size: clamp(15px, 1.15vw, 18px);
+}
+
+.cart-button{ 
+  position: absolute; 
+  right: 16px; 
+  bottom: 16px; 
+  color: var(--green); 
+  font-size: 18px;
+}
+
+.pagination{ 
+  display: flex; 
+  justify-content: center; 
+  gap: 12px; 
+  margin-top: 55px;
+}
+
+.pagination a{ 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 32px; 
+  height: 32px; 
+  border: 1px solid #d9d9d9; 
+  border-radius: 7px; 
+  font-family: "noto_sans_m"; 
+  font-size: 15px;
+}
+
+.pagination a.is-active{ 
+  border-color: var(--green); 
+  background: var(--green); 
+  color: #fff;
+}
 
 /* footer: product section 이후 200px 간격 */
-.site-footer { margin-top: var(--section-gap); padding: 52px 0 34px; border-top: 1px solid #f2f0eb; }
-.footer-top { display: flex; align-items: center; justify-content: space-between; gap: 40px; }
-.brand-values { display: grid; grid-template-columns: repeat(4,1fr); gap: 0; }
-.brand-values li { display: flex; align-items: center; gap: 14px; min-width: 190px; padding-right: 28px; }
-.brand-values li + li { padding-left: 28px; border-left: 1px solid var(--line); }
-.brand-values i { color: var(--green); font-size: 38px; }
-.brand-values strong { font-family: "noto_sans_s"; font-size: 17px; }
-.brand-values p { margin-top: 4px; color: #555; font-size: 13px; line-height: 1.5; }
-.footer-links { display: flex; flex-direction: column; align-items: flex-end; gap: 26px; }
-.social-list { display: flex; gap: 25px; }
-.social-list a { font-size: 24px; }
-.social-list li:nth-child(1) a { color: #e73876; }.social-list li:nth-child(2) a { color: #1877f2; }.social-list li:nth-child(3) a { color: #f00; }.social-list li:nth-child(4) a { color: #4285f4; }
-.footer-links nav { display: flex; gap: 0; }
-.footer-links nav a { padding: 0 28px; border-right: 1px solid var(--line); font-family: "noto_sans_m"; font-size: 16px; }
-.footer-links nav a:last-child { padding-right: 0; border-right: 0; }
-.footer-bottom { margin-top: 37px; padding-top: 20px; border-top: 1px solid #eee; color: #999; font-size: 11px; line-height: 1.8; }
-.policy { display: flex; flex-wrap: wrap; gap: 7px 20px; }
-.footer-bottom address { margin-top: 14px; }.footer-bottom address span { margin-left: 15px; }.footer-bottom p { margin-top: 7px; }
+.site-footer{ 
+  margin-top: var(--section-gap); 
+  padding: 52px 0 34px; 
+  border-top: 1px solid #f2f0eb;
+}
+
+.footer-top{ 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 40px;
+}
+
+.brand-values{ 
+  display: grid; 
+  grid-template-columns: repeat(4,1fr); 
+  gap: 0;
+}
+
+.brand-values li{ 
+  display: flex; 
+  align-items: center; 
+  gap: 14px; 
+  min-width: 190px; 
+  padding-right: 28px;
+}
+
+.brand-values li + li{ 
+  padding-left: 28px; 
+  border-left: 1px solid var(--line);
+}
+
+.brand-values i{ 
+  color: var(--green); 
+  font-size: 38px;
+}
+
+.brand-values strong{ 
+  font-family: "noto_sans_s"; 
+  font-size: 17px;
+}
+
+.brand-values p{ 
+  margin-top: 4px; 
+  color: #555; 
+  font-size: 13px; 
+  line-height: 1.5;
+}
+
+.footer-links{ 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-end; 
+  gap: 26px;
+}
+
+.social-list{ 
+  display: flex; 
+  gap: 25px;
+}
+
+.social-list a{ 
+  font-size: 24px;
+}
+
+.social-list li:nth-child(1) a{ 
+  color: #e73876;
+}
+
+.social-list li:nth-child(2) a{ 
+  color: #1877f2;
+}
+
+.social-list li:nth-child(3) a{ 
+  color: #f00;
+}
+
+.social-list li:nth-child(4) a{ 
+  color: #4285f4;
+}
+
+.footer-links nav{ 
+  display: flex; 
+  gap: 0;
+}
+
+.footer-links nav a{ 
+  padding: 0 28px; 
+  border-right: 1px solid var(--line); 
+  font-family: "noto_sans_m"; 
+  font-size: 16px;
+}
+
+.footer-links nav a:last-child{ 
+  padding-right: 0; 
+  border-right: 0;
+}
+
+.footer-bottom{ 
+  margin-top: 37px; 
+  padding-top: 20px; 
+  border-top: 1px solid #eee; 
+  color: #999; 
+  font-size: 11px; 
+  line-height: 1.8;
+}
+
+.policy{ 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 7px 20px;
+}
+
+.footer-bottom address{ 
+  margin-top: 14px;
+}
+
+.footer-bottom address span{ 
+  margin-left: 15px;
+}
+
+.footer-bottom p{ 
+  margin-top: 7px;
+}
 
 /* =========================================================
+
    1024px 이하: 공통 폭/헤더 압축
+
    ========================================================= */
 @media (max-width: 1024px) {
   :root {
     --side-space: 32px;
-    --section-gap: 160px;
+    --section-gap: 150px;
   }
 
-  .inner { width: calc(100% - 64px); }
-  .header-inner { width: calc(100% - 64px); }
-  .brand-logo { width: 178px; }
-  .gnb ul { gap: clamp(17px, 2.2vw, 29px); }
-  .gnb a { font-size: 11px; }
-  .tool-link + .tool-link { margin-left: 12px; }
-  .tool-link span { display: none; }
-  .tool-link i { font-size: 26px; }
-}
-
-/* =========================================================
-   Tablet: 601px ~ 768px
-   - 사이드바 제거
-   - 예약 바 + 필터 칩 + 4열 상품
-   ========================================================= */
-@media (min-width: 601px) and (max-width: 768px) {
-  :root {
-    --side-space: 32px;
-    --section-gap: 130px;
+  /* =======================================================
+     Header
+     ======================================================= */
+  .inner,
+  .header_i {
+    width: calc(100% - 64px);
   }
 
-  .site-header,
-  .header-inner { height: 72px; }
+  .logo {
+    width: 178px;
+  }
 
-  .sub-page { padding-top: 72px; }
-  .header-inner { grid-template-columns: auto 1fr auto; gap: 27px; }
-  .brand-logo { width: 176px; }
-  .gnb ul { justify-content: center; gap: clamp(15px, 2.3vw, 27px); }
-  .gnb a { font-size: 11px; }
-  .mobile-menu { display: none; }
+  header nav ul {
+    gap: clamp(16px, 2vw, 26px);
+  }
 
-  .breadcrumb { padding-top: 30px; }
+  header nav a {
+    font-size: 11px;
+  }
+
+  .util {
+    gap: 12px;
+  }
+
+  .util_item span {
+    display: none;
+  }
+
+  .util_item i {
+    font-size: 24px;
+  }
+
+  /* =======================================================
+     Catalog
+     ======================================================= */
+  .sub-page {
+    padding-top: 80px;
+  }
+
+  .breadcrumb {
+    padding-top: 48px;
+  }
+
+  /* 사이드바 제거 후 본문이 가로폭 전체를 차지 */
   .catalog-layout {
-    position: relative;
     display: block;
-    padding-top: 22px;
-  }
-
-  /* 사이드바의 카테고리는 숨기고, 예약 카드/필터만 상품 영역에 재배치 */
-  .catalog-sidebar { display: block; }
-  .category-box { display: none; }
-
-  .catalog-content { position: relative; }
-  .catalog-heading h2 { font-size: 28px; }
-  .catalog-heading p { margin-top: 4px; font-size: 15px; }
-
-  .catalog-toolbar {
-    margin-top: 22px;
-    padding-bottom: 0;
-    border-bottom: 0;
-  }
-
-  .product-tabs { gap: clamp(18px, 3vw, 31px); }
-  .product-tabs a { font-size: 14px; }
-  .product-tabs a.is-active { padding: 6px 14px; }
-  .sort-select { display: none; }
-
-  /* 예약 카드를 카테고리 탭 아래에 가로 바로 배치 */
-  .reservation-card {
-    position: absolute;
-    top: 133px;
-    left: 0;
-    display: flex;
     width: 100%;
-    min-height: 61px;
-    padding: 0 16px;
-    border-radius: 4px;
-    background: var(--cream);
+    max-width: none;
+    padding-top: 32px;
   }
 
-  .reservation-card > div { display: flex; align-items: center; gap: 16px; }
-  .reservation-card h2 { font-size: 16px; }
-  .reservation-card h2::before { margin-right: 16px; content: "\F1E3"; font-family: "bootstrap-icons"; font-size: 27px; vertical-align: -3px; }
-  .reservation-card p,
-  .reservation-card > i,
-  .reservation-card .outline-button { display: none; }
-
-  /* 원래 사이드 filter를 상단 필터 버튼처럼 사용 */
-  .filter-box {
-    position: absolute;
-    z-index: 2;
-    top: 264px;
-    left: 0;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    width: auto;
-    padding: 0;
-    border-radius: 0;
-    background: transparent;
+  .catalog-layout > * {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
   }
 
-  .filter-box .side-title { display: none; }
-  .filter-box::before {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 36px;
-    border: 1px solid #d4d2cc;
-    border-radius: 8px;
-    background: #fff;
-    color: #555;
-    content: "\F3E5  필터";
-    font-family: "bootstrap-icons", "noto_sans_r";
-    font-size: 13px;
+  .catalog-sidebar {
+    display: none;
   }
 
-  .filter-box .filter-group {
-    position: relative;
-    padding: 0;
+  .catalog-heading {
+    width: 100%;
   }
 
-  .filter-box .filter-group + .filter-group { margin: 0; }
-  .filter-box .filter-group h3 {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    height: 36px;
-    margin: 0;
-    padding: 0 13px;
-    border: 1px solid #d4d2cc;
-    border-radius: 8px;
-    background: #fff;
-    color: #555;
-    font-family: "noto_sans_r";
-    font-size: 13px;
-    font-weight: 400;
+  .catalog-heading h2 {
+    font-size: 34px;
   }
 
-  .filter-box .filter-group h3::after { content: "\F282"; font-family: "bootstrap-icons"; font-size: 12px; }
-  .filter-box .price-range,
-  .filter-box .price-label,
-  .filter-box .check-label { display: none; }
-
-  /* 예약 바 + 필터를 위한 여백 */
-  .product-count { margin-top: 126px; font-size: 14px; }
-  .catalog-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 13px;
-    margin-top: 73px;
+  .catalog-heading p {
+    font-size: 16px;
   }
 
-  .catalog-card { padding: 11px; border-radius: 11px; }
-  .product-image { height: 145px; }
-  .product-image img { width: 90%; height: 90%; }
-  .catalog-info { margin-top: 7px; padding-right: 20px; }
-  .catalog-info h3 { font-size: 14px; white-space: normal; line-height: 1.4; }
-  .catalog-info strong { margin-top: 3px; font-size: 16px; }
-  .cart-button { right: 10px; bottom: 12px; font-size: 16px; }
-  .best-badge { padding: 3px 8px; font-size: 10px; }
-  .pagination { margin-top: 50px; }
-
-  /* 태블릿 푸터 */
-  .site-footer { margin-top: 145px; padding: 42px 0 26px; }
-  .footer-top { align-items: center; flex-direction: column-reverse; gap: 48px; }
-  .brand-values { width: 100%; }
-  .brand-values li { min-width: 0; padding-right: 18px; }
-  .brand-values li + li { padding-left: 18px; }
-  .brand-values i { font-size: 32px; }
-  .brand-values strong { font-size: 15px; }
-  .brand-values p { font-size: 11px; }
-  .footer-links { flex-direction: row-reverse; align-items: center; gap: 42px; }
-  .footer-links nav a { padding: 0 22px; font-size: 16px; }
-  .footer-bottom { margin-top: 34px; }
-}
-
-/* =========================================================
-   Mobile: 600px 이하 (360px 포함)
-   - 2열 상품 6개 노출
-   - 탭/예약/필터를 상품 상단으로 재배치
-   ========================================================= */
-@media (max-width: 600px) {
-  :root {
-    --side-space: 16px;
-    --section-gap: 80px;
-  }
-
-  .site-header,
-  .header-inner { height: 64px; }
-
-  .sub-page { padding-top: 64px; }
-  .header-inner { display: flex; justify-content: space-between; width: calc(100% - 32px); }
-  .brand-logo { width: 145px; }
-  .gnb { display: none; }
-  .tool-link + .tool-link { margin-left: 15px; }
-  .tool-link { min-width: 0; }
-  .tool-link i { font-size: 20px; }
-  .tool-link:nth-child(3) { display: none; }
-  .mobile-menu { display: block; margin-left: 16px; color: var(--green); font-size: 24px; }
-
-  .inner { width: calc(100% - 32px); }
-  .breadcrumb { gap: 10px; padding-top: 38px; font-size: 12px; }
-  .breadcrumb a:first-child { font-size: 15px; }
-  .breadcrumb > i { font-size: 11px; }
-
-  .catalog-layout {
-    position: relative;
-    display: block;
-    padding-top: 28px;
-  }
-
-  .category-box { display: none; }
-  .catalog-content { position: relative; }
-  .catalog-heading h2 { font-size: 20px; letter-spacing: -1px; }
-  .catalog-heading p { margin-top: 2px; font-size: 12px; }
-
+  /* 카테고리와 정렬 */
   .catalog-toolbar {
-    margin-top: 22px;
-    padding-bottom: 0;
-    border-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-top: 28px;
+    padding-bottom: 18px;
   }
 
   .product-tabs {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    gap: 9px 20px;
+    min-width: 0;
+  }
+
+  .product-tabs a {
+    font-size: 14px;
+  }
+
+  .product-tabs a.is-active {
+    padding: 6px 14px;
+  }
+
+  .sort-select {
+    flex: 0 0 160px;
+  }
+
+  .sort-select select {
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .product-count {
+    width: 100%;
+    margin-top: 24px;
+    font-size: 15px;
+  }
+
+  /*
+    5열을 강제하지 않고, 남은 폭에 맞춰
+    3~5열로 자연스럽게 배치
+  */
+  .catalog-grid {
     display: grid;
-    grid-template-columns: repeat(5, max-content);
-    gap: 8px 22px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px 16px;
+    margin-top: 22px;
+  }
+
+  .catalog-card {
+    min-width: 0;
+    padding: 14px;
+    border-radius: 13px;
+  }
+
+  .product-image {
+    height: clamp(155px, 18vw, 210px);
+  }
+
+  .catalog-info {
+    margin-top: 9px;
+    padding-right: 22px;
+  }
+
+  .catalog-info h3 {
+    font-size: 14px;
+  }
+
+  .catalog-info strong {
+    font-size: 16px;
+  }
+
+  .cart-button {
+    right: 13px;
+    bottom: 13px;
+  }
+
+  .pagination {
+    margin-top: 42px;
+  }
+
+  /* =======================================================
+     Footer
+     ======================================================= */
+  .site-footer {
+    margin-top: var(--section-gap);
+    padding: 42px 0 28px;
+  }
+
+  .footer-top {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 38px;
+  }
+
+  .brand-values {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     width: 100%;
-    overflow: visible;
   }
 
-  .product-tabs a { padding: 4px 0; font-size: 10px; }
-  .product-tabs a.is-active { padding: 4px 12px; border-radius: 12px; }
-  .sort-select { display: none; }
+  .brand-values li {
+    min-width: 0;
+    padding-right: 16px;
+  }
 
-  /* 예약 카드: 탭 아래 전체 폭 */
-  .reservation-card {
-    position: absolute;
-    top: 134px;
-    left: 0;
-    display: flex;
+  .brand-values li + li {
+    padding-left: 16px;
+  }
+
+  .brand-values i {
+    font-size: 32px;
+  }
+
+  .brand-values strong {
+    font-size: 15px;
+  }
+
+  .brand-values p {
+    font-size: 11px;
+  }
+
+  .footer-links {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
     width: 100%;
-    min-height: 38px;
-    padding: 0 14px;
-    border-radius: 4px;
-    background: var(--cream);
   }
 
-  .reservation-card > div { display: flex; align-items: center; }
-  .reservation-card h2 { font-size: 12px; }
-  .reservation-card h2::before { margin-right: 12px; content: "\F1E3"; font-family: "bootstrap-icons"; font-size: 20px; vertical-align: -2px; }
-  .reservation-card p,
-  .reservation-card > i,
-  .reservation-card .outline-button { display: none; }
+  .footer-links nav {
+    flex-wrap: wrap;
+  }
 
-  /* 원래 filter-box를 필터 칩 행으로 변환 */
-  .filter-box {
-    position: absolute;
-    z-index: 2;
-    top: 243px;
-    left: 0;
+  .footer-links nav a {
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+  .social-list {
+    flex: 0 0 auto;
+    gap: 20px;
+  }
+
+  .social-list a {
+    font-size: 21px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    padding-top: 18px;
+  }
+}
+
+/* =========================================================
+
+   768px 이하 공통
+
+   ========================================================= */
+@media (max-width: 768px){
+  :root {
+    --side-space: clamp(16px, 3vw, 24px);
+    --section-gap: clamp(80px, 12vw, 120px);
+  }
+
+  /* header */
+  header {
+    height: clamp(64px, 9vw, 70px);
+  }
+
+  .sub-page {
+    padding-top: clamp(64px, 9vw, 70px);
+  }
+
+  .header_i {
     display: flex;
-    align-items: center;
-    gap: 7px;
+    justify-content: space-between;
+    width: min(var(--content-width), calc(100% - (var(--side-space) * 2)));
+  }
+
+  .logo {
+    width: clamp(132px, 21vw, 165px);
+  }
+
+  /* 768px 이하: 메뉴 겹침 방지 */
+  header nav,
+  .header_util .util {
+    display: none;
+  }
+
+  .menu_btn {
+    display: block;
+    font-size: clamp(24px, 4vw, 28px);
+  }
+
+  /* page spacing */
+  .breadcrumb {
+    gap: clamp(10px, 2vw, 14px);
+    padding-top: clamp(28px, 5vw, 40px);
+    font-size: clamp(11px, 1.7vw, 13px);
+  }
+
+  .breadcrumb a:first-child {
+    font-size: clamp(16px, 2.5vw, 20px);
+  }
+
+  .catalog-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: clamp(25px, 4vw, 38px);
+  }
+
+  /* 좌측 사이드 메뉴는 모바일에서 숨김 */
+  .catalog-sidebar {
+    display: none;
+  }
+
+  .catalog-heading h2 {
+    font-size: clamp(25px, 4.5vw, 34px);
+    letter-spacing: -1.5px;
+  }
+
+  .catalog-heading p {
+    margin-top: 5px;
+    font-size: clamp(12px, 2vw, 16px);
+  }
+
+  /* 카테고리 / 정렬 */
+  .catalog-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 24px;
+    padding-bottom: 18px;
+  }
+
+  .product-tabs {
+    flex-wrap: wrap;
+    gap: 7px clamp(14px, 2.5vw, 22px);
     width: 100%;
-    padding: 0;
-    border-radius: 0;
-    background: transparent;
   }
 
-  .filter-box .side-title { display: none; }
-  .filter-box::before {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 28px;
-    padding: 0 8px;
-    border: 1px solid #d4d2cc;
-    border-radius: 5px;
-    background: #fff;
-    color: #555;
-    content: "\F3E5  필터";
-    font-family: "bootstrap-icons", "noto_sans_r";
-    font-size: 10px;
-    white-space: nowrap;
+  .product-tabs a {
+    padding: 5px 0;
+    font-size: clamp(11px, 1.8vw, 14px);
   }
 
-  .filter-box .filter-group { padding: 0; }
-  .filter-box .filter-group + .filter-group { margin: 0; }
-  .filter-box .filter-group h3 {
+  .product-tabs a.is-active {
+    padding: 6px 13px;
+  }
+
+  .sort-select {
+    flex-basis: auto;
+    width: min(180px, 100%);
+  }
+
+  .sort-select select {
+    height: 40px;
+    padding-left: 13px;
+    font-size: 13px;
+  }
+
+  /* 필터 버튼과 상품 개수 문구가 겹치지 않도록 */
+  .filter_list {
     display: flex;
-    align-items: center;
-    gap: 6px;
-    height: 28px;
-    margin: 0;
-    padding: 0 8px;
-    border: 1px solid #d4d2cc;
-    border-radius: 5px;
-    background: #fff;
-    color: #555;
-    font-family: "noto_sans_r";
-    font-size: 10px;
-    font-weight: 400;
-    white-space: nowrap;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
-  .filter-box .filter-group h3::after { content: "\F282"; font-family: "bootstrap-icons"; font-size: 9px; }
-  .filter-box .price-range,
-  .filter-box .price-label,
-  .filter-box .check-label { display: none; }
+  .filter_list .product_count {
+    position: static;
+    flex-basis: 100%;
+    order: 2;
+    margin-top: 2px;
+    font-size: clamp(10px, 1.6vw, 12px);
+  }
 
-  .product-count { margin-top: 126px; color: #555; font-size: 10px; }
+  .product-count {
+    position: static;
+    margin-top: 18px;
+    font-size: clamp(12px, 1.8vw, 15px);
+  }
+
+  /* product card */
   .catalog-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
-    margin-top: 76px;
+    gap: clamp(12px, 2.5vw, 20px);
+    margin-top: 20px;
   }
 
-  .catalog-item:nth-child(n + 7) { display: none; }
-  .catalog-card { padding: 10px; border-radius: 14px; }
-  .product-image { height: 125px; }
-  .product-image img { width: 91%; height: 91%; }
-  .best-badge { padding: 3px 8px; border-radius: 4px; font-size: 10px; }
-  .catalog-info { margin-top: 8px; padding-right: 22px; }
-  .catalog-info h3 { font-size: 12px; line-height: 1.4; white-space: normal; }
-  .catalog-info strong { margin-top: 2px; font-size: 14px; }
-  .cart-button { right: 11px; bottom: 11px; font-size: 16px; }
-  .pagination { gap: 13px; margin-top: 31px; }
-  .pagination a { width: 22px; height: 22px; border-radius: 4px; font-size: 11px; }
+  .catalog-card {
+    padding: clamp(10px, 2vw, 14px);
+    border-radius: 12px;
+  }
 
-  /* 모바일 footer */
-  .site-footer { margin-top: 105px; padding: 24px 0 20px; border-top: 1px solid #eee; }
-  .footer-top { display: flex; flex-direction: column-reverse; align-items: stretch; gap: 24px; }
-  .brand-values { grid-template-columns: repeat(4, 1fr); gap: 0; }
-  .brand-values li { display: block; min-width: 0; padding: 0 5px; text-align: center; }
-  .brand-values li + li { padding-left: 5px; border-left: 0; }
-  .brand-values i { display: inline-block; margin-bottom: 2px; font-size: 18px; }
-  .brand-values strong { display: block; font-size: 9px; }
-  .brand-values p { margin-top: 2px; font-size: 8px; line-height: 1.45; }
-  .footer-links { flex-direction: column-reverse; align-items: stretch; gap: 17px; }
-  .footer-links nav { justify-content: space-between; }
-  .footer-links nav a { padding: 0 13px; font-family: "noto_sans_r"; font-size: 11px; }
-  .footer-links nav a:first-child { padding-left: 0; }.footer-links nav a:last-child { padding-right: 0; }
-  .social-list { gap: 25px; }.social-list a { font-size: 17px; }
-  .footer-bottom { margin-top: 18px; padding-top: 0; border-top: 0; font-size: 8px; line-height: 1.6; }
-  .policy { gap: 4px 10px; }.footer-bottom address { margin-top: 7px; }.footer-bottom address span { margin-left: 7px; }.footer-bottom p { margin-top: 4px; }
+  .product-image {
+    height: clamp(120px, 25vw, 180px);
+  }
+
+  .best-badge {
+    padding: 3px 7px;
+    font-size: 10px;
+  }
+
+  .catalog-info {
+    margin-top: 8px;
+    padding-right: 20px;
+  }
+
+  .catalog-info h3 {
+    font-size: clamp(12px, 2vw, 15px);
+  }
+
+  .catalog-info strong {
+    margin-top: 3px;
+    font-size: clamp(13px, 2.2vw, 16px);
+  }
+
+  .cart-button {
+    right: 11px;
+    bottom: 11px;
+    font-size: 16px;
+  }
+
+  .pagination {
+    gap: 8px;
+    margin-top: 35px;
+  }
+
+  .pagination a {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  /* footer */
+  .site-footer {
+    margin-top: var(--section-gap);
+    padding: 38px 0 26px;
+  }
+
+  .footer-top {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 28px;
+  }
+
+  .brand-values {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .brand-values li {
+    display: block;
+    min-width: 0;
+    padding: 0 7px;
+    text-align: center;
+  }
+
+  .brand-values li + li {
+    padding-left: 7px;
+  }
+
+  .brand-values i {
+    font-size: clamp(22px, 4vw, 32px);
+  }
+
+  .brand-values strong {
+    display: block;
+    margin-top: 4px;
+    font-size: clamp(10px, 1.7vw, 14px);
+  }
+
+  .brand-values p {
+    font-size: clamp(8px, 1.4vw, 11px);
+  }
+
+  .footer-links {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footer-links nav {
+    flex-wrap: wrap;
+  }
+
+  .footer-links nav a {
+    padding: 0 clamp(10px, 2vw, 18px);
+    font-size: clamp(11px, 1.8vw, 14px);
+  }
+
+  .social-list a {
+    font-size: 20px;
+  }
+
+  .footer-bottom {
+    margin-top: 24px;
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+
+   Mobile: 480px
+   
+   ========================================================= */
+@media (max-width: 480px) {
+  .breadcrumb {
+    padding-top: 26px;
+  }
+
+  .catalog-layout {
+    padding-top: 26px;
+  }
+
+  .catalog-heading p {
+    margin-top: 4px;
+  }
+
+  .catalog-toolbar {
+    gap: 8px;
+    margin-top: 18px;
+    padding-bottom: 8px;
+  }
+
+  .product-tabs {
+    gap: 6px 18px;
+  }
+
+  .product-tabs a {
+    padding: 4px 0;
+  }
+
+  .product-tabs a.is-active {
+    padding: 5px 13px;
+  }
+
+  .product-count {
+    margin-top: 14px;
+  }
+
+  .catalog-grid {
+    margin-top: 16px;
+  }
+}
+
+/* =========================================================
+
+   Mobile: 360px
+   
+   ========================================================= */
+@media (max-width: 360px) {
+  .breadcrumb {
+    padding-top: 22px;
+  }
+
+  .catalog-layout {
+    padding-top: 22px;
+  }
+
+  .catalog-toolbar {
+    margin-top: 14px;
+    padding-bottom: 5px;
+  }
+
+  .product-tabs {
+    gap: 5px 14px;
+  }
+
+  .product-tabs a {
+    font-size: 11px;
+  }
+
+  .product-tabs a.is-active {
+    padding: 5px 11px;
+  }
+
+  .product-count {
+    margin-top: 10px;
+    font-size: 11px;
+  }
+
+  .catalog-grid {
+    gap: 12px;
+    margin-top: 14px;
+  }
 }

@@ -8,38 +8,63 @@
   <link rel="stylesheet" href="../css/cakemenu.css">
 </head>
 <body>
-  <!-- header: 메인 페이지와 공통으로 사용할 수 있는 구조 -->
-  <header class="site-header">
-    <div class="inner header-inner">
-      <h1 class="brand-logo">
-        <a href="#"><img src="./img/logo.png" alt="TOUS les JOURS"></a>
+  <!-- header -->
+  <header>
+    <div class="header_i">
+      <!-- logo -->
+      <h1 class="logo">
+        <a href="../touslesjours.html">
+          <img src="../img/logo.png" alt="logo">
+        </a>
       </h1>
+      <!-- /logo -->
 
-      <nav class="gnb" aria-label="주 메뉴">
+      <!-- navigation -->
+      <nav>
         <ul>
-          <li><a class="is-active" href="#">MENU</a></li>
-          <li><a href="#">CAKE RESERVATION</a></li>
+          <li><a href="#" style="color: #113f2e;">MENU</a></li>
+          <li><a href="../sub/reservation.html">CAKE RESERVATION</a></li>
           <li><a href="#">STORE</a></li>
           <li><a href="#">EVENT</a></li>
           <li><a href="#">BRAND</a></li>
           <li><a href="#">CUSTOMER</a></li>
         </ul>
       </nav>
+      <!-- /navigation -->
 
-      <div class="header-tools">
-        <a href="#" class="tool-link"><i class="bi bi-search"></i><span>검색</span></a>
-        <a href="#" class="tool-link"><i class="bi bi-person"></i><span>로그인</span></a>
-        <a href="#" class="tool-link"><i class="bi bi-bag"></i><span>장바구니</span></a>
-        <button type="button" class="mobile-menu" aria-label="메뉴 열기"><i class="bi bi-list"></i></button>
+      <!-- util -->
+      <div class="header_util">
+        <div class="util">
+          <a href="#" class="util_item">
+            <i class="bi bi-search"></i>
+            <span>검색</span>
+          </a>
+          <a href="#" class="util_item">
+            <i class="bi bi-person"></i>
+            <span>로그인</span>
+          </a>
+          <a href="#" class="util_item">
+            <i class="bi bi-bag"></i>
+            <span>장바구니</span>
+          </a>
+        </div>
+
+        <button type="button" class="menu_btn">
+          <i class="bi bi-list"></i>
+        </button>
       </div>
+      <!-- /util -->
     </div>
   </header>
+  <!-- /header -->
 
   <main class="sub-page">
     <div class="inner">
       <!-- breadcrumb -->
       <nav class="breadcrumb" aria-label="현재 페이지">
-        <a href="#" aria-label="홈"><i class="bi bi-house-door"></i></a>
+        <a href="#" aria-label="홈">
+          <i class="bi bi-house-door"></i>
+        </a>
         <i class="bi bi-chevron-right" aria-hidden="true"></i>
         <a href="#">제품</a>
         <i class="bi bi-chevron-right" aria-hidden="true"></i>
@@ -51,13 +76,26 @@
         <aside class="catalog-sidebar">
           <section class="side-box category-box">
             <h2 class="side-title">상품 카테고리</h2>
+
             <ul class="side-category-list">
-              <li><a href="#">전체 상품 <i class="bi bi-chevron-right"></i></a></li>
-              <li><a class="is-active" href="#">케이크 <i class="bi bi-chevron-right"></i></a></li>
-              <li><a href="#">빵 <i class="bi bi-chevron-right"></i></a></li>
-              <li><a href="#">선물 <i class="bi bi-chevron-right"></i></a></li>
-              <li><a href="#">음료 <i class="bi bi-chevron-right"></i></a></li>
-              <li><a href="#">디저트 <i class="bi bi-chevron-right"></i></a></li>
+              <li>
+                <a href="#">전체 상품 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a class="is-active" href="#">케이크 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a href="#">빵 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a href="#">선물 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a href="#">음료 <i class="bi bi-chevron-right"></i></a>
+              </li>
+              <li>
+                <a href="#">디저트 <i class="bi bi-chevron-right"></i></a>
+              </li>
             </ul>
           </section>
 
@@ -66,28 +104,56 @@
 
             <div class="filter-group price-filter">
               <h3>가격</h3>
-              <div class="price-range" aria-label="가격 범위">
+              <div class="price-range">
                 <div class="range-line"></div>
                 <button class="range-thumb is-start" type="button" aria-label="최소 가격"></button>
                 <button class="range-thumb is-end" type="button" aria-label="최대 가격"></button>
               </div>
-              <div class="price-label"><span>0원</span><span>50,000원 이상</span></div>
+              <div class="price-label">
+                <span>0원</span>
+                <span>50,000원 이상</span>
+              </div>
             </div>
 
             <div class="filter-group">
               <h3>주요 재료</h3>
-              <label class="check-label"><input type="checkbox"><span>딸기</span></label>
-              <label class="check-label"><input type="checkbox"><span>초콜릿</span></label>
-              <label class="check-label"><input type="checkbox"><span>치즈</span></label>
-              <label class="check-label"><input type="checkbox"><span>블루베리</span></label>
-              <label class="check-label"><input type="checkbox"><span>녹차</span></label>
+
+              <label class="check-label">
+                <input type="checkbox">
+                <span>딸기</span>
+              </label>
+              <label class="check-label">
+                <input type="checkbox">
+                <span>초콜릿</span>
+              </label>
+              <label class="check-label">
+                <input type="checkbox">
+                <span>치즈</span>
+              </label>
+              <label class="check-label">
+                <input type="checkbox">
+                <span>블루베리</span>
+              </label>
+              <label class="check-label">
+                <input type="checkbox">
+                <span>녹차</span>
+              </label>
             </div>
 
             <div class="filter-group">
               <h3>생일</h3>
-              <label class="check-label"><input type="checkbox"><span>생일</span></label>
-              <label class="check-label"><input type="checkbox"><span>기념일</span></label>
-              <label class="check-label"><input type="checkbox"><span>선물용</span></label>
+              <label class="check-label">
+                <input type="checkbox">
+                <span>생일</span>
+              </label>
+              <label class="check-label">
+                <input type="checkbox">
+                <span>기념일</span>
+              </label>
+              <label class="check-label">
+                <input type="checkbox">
+                <span>선물용</span>
+              </label>
             </div>
           </section>
 
@@ -103,10 +169,10 @@
 
         <!-- product content -->
         <section class="catalog-content" aria-labelledby="page-title">
-          <header class="catalog-heading">
+          <div class="catalog-heading">
             <h2 id="page-title">케이크</h2>
             <p>뚜레쥬르의 다양한 케이크를 만나보세요.</p>
-          </header>
+          </div>
 
           <div class="catalog-toolbar">
             <ul class="product-tabs" aria-label="케이크 분류">
@@ -135,80 +201,186 @@
           <ul class="catalog-grid">
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><span class="best-badge">BEST</span><img src="" alt="딸기 생크림 케이크"></a>
-                <div class="catalog-info"><h3>딸기 생크림 케이크</h3><strong>32,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="딸기 생크림 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <span class="best-badge">BEST</span>
+                  <img src="../img/strawberry_cream_cake.png" alt="strawberry">
+                </a>
+                <div class="catalog-info">
+                  <h3>딸기 생크림 케이크</h3>
+                  <strong>32,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="딸기 생크림 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><span class="best-badge">BEST</span><img src="" alt="초코 듬뿍 케이크"></a>
-                <div class="catalog-info"><h3>초코 듬뿍 케이크</h3><strong>33,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="초코 듬뿍 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <span class="best-badge">BEST</span>
+                  <img src="../img/choco_cake.png" alt="choco">
+                </a>
+                <div class="catalog-info">
+                  <h3>초코 듬뿍 케이크</h3>
+                  <strong>33,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="초코 듬뿍 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="블루베리 치즈 케이크"></a>
-                <div class="catalog-info"><h3>블루베리 치즈 케이크</h3><strong>30,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="블루베리 치즈 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/blueberry_cake.png" alt="blueberry">
+                </a>
+                <div class="catalog-info">
+                  <h3>블루베리 치즈 케이크</h3>
+                  <strong>30,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="블루베리 치즈 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="샤인머스켓 생크림 케이크"></a>
-                <div class="catalog-info"><h3>샤인머스켓 생크림 케이크</h3><strong>34,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="샤인머스켓 생크림 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/shinemuscat_cake.png" alt="shinemuscat">
+                </a>
+                <div class="catalog-info">
+                  <h3>샤인머스켓 생크림 케이크</h3>
+                  <strong>34,000원</strong></div>
+                <button class="cart-button" type="button" aria-label="샤인머스켓 생크림 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="떠먹는 티라미수 케이크"></a>
-                <div class="catalog-info"><h3>떠먹는 티라미수 케이크</h3><strong>28,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="떠먹는 티라미수 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/tiramisu_cake.png" alt="tiramisu">
+                </a>
+                <div class="catalog-info">
+                  <h3>떠먹는 티라미수 케이크</h3>
+                  <strong>28,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="떠먹는 티라미수 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="몽블랑 케이크"></a>
-                <div class="catalog-info"><h3>몽블랑 케이크</h3><strong>31,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="몽블랑 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/montblanc_cake.png" alt="montblanc">
+                </a>
+                <div class="catalog-info">
+                  <h3>몽블랑 케이크</h3>
+                  <strong>31,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="몽블랑 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="스트로베리 치즈 케이크"></a>
-                <div class="catalog-info"><h3>스트로베리 치즈 케이크</h3><strong>30,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="스트로베리 치즈 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/strawberry_cheeze_cake.png" alt="cheeze">
+                </a>
+                <div class="catalog-info">
+                  <h3>스트로베리 치즈 케이크</h3>
+                  <strong>30,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="스트로베리 치즈 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="밀크 크림 카스테라"></a>
-                <div class="catalog-info"><h3>밀크 크림 카스테라</h3><strong>3,800원</strong></div>
-                <button class="cart-button" type="button" aria-label="밀크 크림 카스테라 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/milk_cream_castella.png" alt="castella">
+                </a>
+                <div class="catalog-info">
+                  <h3>밀크 크림 카스테라</h3>
+                  <strong>3,800원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="밀크 크림 카스테라 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="미니 생크림 케이크"></a>
-                <div class="catalog-info"><h3>미니 생크림 케이크</h3><strong>12,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="미니 생크림 케이크 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/mini_cream_cake.png" alt="minicream">
+                </a>
+                <div class="catalog-info">
+                  <h3>미니 생크림 케이크</h3>
+                  <strong>12,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="미니 생크림 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
             <li class="catalog-item">
               <article class="catalog-card">
-                <a href="#" class="product-image"><img src="" alt="프렌치 밀크 크레이프"></a>
-                <div class="catalog-info"><h3>프렌치 밀크 크레이프</h3><strong>26,000원</strong></div>
-                <button class="cart-button" type="button" aria-label="프렌치 밀크 크레이프 장바구니 담기"><i class="bi bi-cart3"></i></button>
+                <a href="#" class="product-image">
+                  <img src="../img/french_milk_crape.png" alt="frenchmilkcrape">
+                </a>
+                <div class="catalog-info">
+                  <h3>프렌치 밀크 크레이프</h3>
+                  <strong>26,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="프렌치 밀크 크레이프 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
+              </article>
+            </li>
+            <li class="catalog-item">
+              <article class="catalog-card">
+                <a href="#" class="product-image">
+                  <img src="../img/ganache_cake.png" alt="ganache">
+                </a>
+                <div class="catalog-info">
+                  <h3>가나슈 케이크</h3>
+                  <strong>29,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="가나슈 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
+              </article>
+            </li>
+            <li class="catalog-item">
+              <article class="catalog-card">
+                <a href="#" class="product-image">
+                  <img src="../img/marble_cheeze_cake.png" alt="marblecheeze">
+                </a>
+                <div class="catalog-info">
+                  <h3>마블 치즈 케이크</h3>
+                  <strong>27,000원</strong>
+                </div>
+                <button class="cart-button" type="button" aria-label="마블 치즈 케이크 장바구니 담기">
+                  <i class="bi bi-cart3"></i>
+                </button>
               </article>
             </li>
           </ul>
 
           <nav class="pagination" aria-label="상품 페이지">
-            <a href="#" aria-label="이전 페이지"><i class="bi bi-chevron-left"></i></a>
-            <a class="is-active" href="#">1</a><a href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a>
-            <a href="#" aria-label="다음 페이지"><i class="bi bi-chevron-right"></i></a>
+            <a href="#" aria-label="이전 페이지">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+            <a class="is-active" href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#" aria-label="다음 페이지">
+              <i class="bi bi-chevron-right"></i></a>
           </nav>
         </section>
       </div>
@@ -219,19 +391,89 @@
     <div class="inner">
       <div class="footer-top">
         <ul class="brand-values">
-          <li><i class="bi bi-leaf"></i><div><strong>FRESH</strong><p>매일 새롭게<br>정직한 재료</p></div></li>
-          <li><i class="bi bi-flower1"></i><div><strong>NATURAL</strong><p>자연의 건강함을<br>담은 베이커리</p></div></li>
-          <li><i class="bi bi-heart"></i><div><strong>WARM</strong><p>따뜻하고 편안한<br>일상의 순간</p></div></li>
-          <li><i class="bi bi-people"></i><div><strong>TOGETHER</strong><p>고객과 함께 만드는<br>특별한 경험</p></div></li>
+          <li>
+            <i class="bi bi-leaf"></i>
+            <div>
+              <strong>FRESH</strong>
+              <p>
+                매일 새롭게<br>
+                정직한 재료
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-flower1"></i>
+            <div>
+              <strong>NATURAL</strong>
+              <p>
+                자연의 건강함을<br>
+                담은 베이커리
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-heart"></i>
+            <div>
+              <strong>WARM</strong>
+              <p>
+                따뜻하고 편안한<br>
+                일상의 순간
+              </p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-people"></i>
+            <div>
+              <strong>TOGETHER</strong>
+              <p>
+                고객과 함께 만드는<br>
+                특별한 경험
+              </p>
+            </div>
+          </li>
         </ul>
         <div class="footer-links">
-          <ul class="social-list"><li><a href="#"><i class="bi bi-instagram"></i></a></li><li><a href="#"><i class="bi bi-facebook"></i></a></li><li><a href="#"><i class="bi bi-youtube"></i></a></li><li><a href="#"><i class="bi bi-google"></i></a></li></ul>
-          <nav><a href="#">고객센터</a><a href="#">이용안내</a><a href="#">회사소개</a></nav>
+          <ul class="social-list">
+            <li>
+              <a href="#">
+                <i class="bi bi-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bi bi-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="bi bi-google"></i>
+              </a>
+            </li>
+          </ul>
+          <nav>
+            <a href="#">고객센터</a>
+            <a href="#">이용안내</a>
+            <a href="#">회사소개</a>
+          </nav>
         </div>
       </div>
       <div class="footer-bottom">
-        <div class="policy"><a href="#">이용약관</a><a href="#">개인정보처리방침</a><a href="#">위치기반 서비스 이용약관</a><a href="#">전자금융거래 이용약관</a></div>
-        <address>CJ푸드빌(주) <span>대표이사 : 이건일</span><span>사업자등록번호 : 312-81-42519</span><br>서울시 중구 마른내로34(초동 106-9번지) KT&amp;G을지로타워 3, 9, 11층 CJ푸드빌(주)</address>
+        <div class="policy">
+          <a href="#">이용약관</a>
+          <a href="#">개인정보처리방침</a>
+          <a href="#">위치기반 서비스 이용약관</a>
+          <a href="#">전자금융거래 이용약관</a>
+        </div>
+        <address>CJ푸드빌(주) 
+          <span>대표이사 : 이건일</span>
+          <span>사업자등록번호 : 312-81-42519</span><br>
+          서울시 중구 마른내로34(초동 106-9번지) KT&amp;G을지로타워 3, 9, 11층 CJ푸드빌(주)
+        </address>
         <p>COPYRIGHT 2026©CJ Foodville ALL RIGHT RESERVED.</p>
       </div>
     </div>

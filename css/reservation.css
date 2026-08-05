@@ -1,23 +1,1898 @@
-@font-face { font-family:"noto_sans_r"; src:url("../font/Noto_Sans_KR/NotoSansKR-Regular.ttf"); }
-@font-face { font-family:"noto_sans_m"; src:url("../font/Noto_Sans_KR/NotoSansKR-Medium.ttf"); }
-@font-face { font-family:"noto_sans_s"; src:url("../font/Noto_Sans_KR/NotoSansKR-SemiBold.ttf"); }
-:root { --green:#113f2e; --cream:#f8f4eb; --text:#222; --muted:#777; --line:#e3dfd7; --content-width:1600px; --side-space:clamp(24px,4vw,80px); --radius:16px; --section-gap:200px; }
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; } html { scroll-behavior:smooth; } body { min-width:320px; overflow-x:hidden; color:var(--text); font-family:"noto_sans_r",sans-serif; line-height:1.5; word-break:keep-all; } a { color:inherit; text-decoration:none; } ul,ol { list-style:none; } img { display:block; max-width:100%; } button,input { border:0; outline:0; background:transparent; font:inherit; } button { cursor:pointer; } address { font-style:normal; }.inner { width:min(var(--content-width),calc(100% - (var(--side-space) * 2))); margin:auto; }
-/* common header */
-.site-header { position:fixed; z-index:100; top:0; left:0; width:100%; height:80px; border-bottom:1px solid #f0eeea; background:rgba(255,255,255,.97); }.header-inner { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:100%; }.brand-logo { width:clamp(150px,11vw,210px); }.brand-logo a { display:block; }.gnb ul { display:flex; gap:clamp(22px,2.2vw,42px); }.gnb a { position:relative; display:block; font-family:"noto_sans_m"; font-size:12px; white-space:nowrap; }.gnb a::after { position:absolute; bottom:-8px; left:0; width:0; height:2px; background:var(--green); content:""; transition:.2s; }.gnb a:hover::after,.gnb a.is-active::after { width:100%; }.gnb a.is-active { color:var(--green); }.header-tools { display:flex; justify-content:flex-end; align-items:center; }.tool-link { display:flex; flex-direction:column; align-items:center; gap:3px; min-width:46px; font-size:10px; }.tool-link+.tool-link { margin-left:clamp(12px,1.8vw,28px); }.tool-link i { color:var(--green); font-size:21px; line-height:1; }.mobile-menu { display:none; margin-left:14px; color:var(--green); font-size:28px; }
+@font-face{ 
+  font-family:"noto_sans_r"; 
+  src:url("../font/Noto_Sans_KR/NotoSansKR-Regular.ttf");
+}
+
+@font-face{ 
+  font-family:"noto_sans_m"; 
+  src:url("../font/Noto_Sans_KR/NotoSansKR-Medium.ttf");
+}
+
+@font-face{ 
+  font-family:"noto_sans_s"; 
+  src:url("../font/Noto_Sans_KR/NotoSansKR-SemiBold.ttf");
+}
+
+:root{ 
+  --green:#113f2e; 
+  --cream:#f8f4eb; 
+  --text:#222; 
+  --muted:#777; 
+  --line:#e3dfd7; 
+  --content-width:1600px; 
+  --side-space:clamp(24px,4vw,80px); 
+  --radius:16px; 
+  --section-gap:200px;
+}
+
+*,*::before,*::after{ 
+  box-sizing:border-box; 
+  margin:0; 
+  padding:0;
+}
+
+html{ 
+  scroll-behavior:smooth;
+}
+
+body{ 
+  min-width:320px; 
+  overflow-x:hidden; 
+  color:var(--text); 
+  font-family:"noto_sans_r";
+  line-height:1.5; 
+  word-break:keep-all;
+}
+
+a{ 
+  color:inherit; 
+  text-decoration:none;
+}
+
+ul,ol{ 
+  list-style:none;
+} 
+
+img{ 
+  display:block; 
+  max-width:100%;
+} 
+
+button,input{ 
+  border:0; 
+  outline:0; 
+  background:transparent; 
+  font:inherit;
+} 
+
+button{ 
+  cursor:pointer;
+} 
+
+address{ 
+  font-style:normal;
+}
+
+.inner{ 
+  width:min(var(--content-width),calc(100% - (var(--side-space) * 2))); 
+  margin:auto;
+}
+
+/* 공통 */
+header{
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(255, 255, 255, .97);
+}
+
+.header_i{
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  width: min(var(--content-width), calc(100% - (var(--side-space) * 2)));
+  height: 100%;
+  margin: 0 auto;
+}
+
+.logo{ 
+  width: clamp(150px, 11vw, 195px);
+}
+
+.logo a{ 
+  display: block;
+}
+
+header nav ul{
+  display: flex;
+  align-items: center;
+  gap: clamp(22px, 2.2vw, 42px);
+}
+
+header nav a{
+  position: relative;
+  display: block;
+  font-family: "noto_sans_m";
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+header nav a::after{
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  content: "";
+  transition: width .2s;
+}
+
+header nav a:hover::after{ 
+  width: 100%;
+}
+
+.header_util{ 
+  display: flex; 
+  justify-content: flex-end; 
+  align-items: center;
+}
+
+.util{ 
+  display: flex; 
+  align-items: center; 
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.util_item{ 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  gap: 3px; 
+  font-size: 10px;
+}
+
+.util_item i{ 
+  color: var(--green); 
+  font-size: 21px; 
+  line-height: 1;
+}
+
+.menu_btn{ 
+  display: none; 
+  color: var(--green); 
+  font-size: 28px;
+}
+
 /* page shell */
-.reservation-page { padding-top:80px; }.breadcrumb { display:flex; align-items:center; gap:15px; padding-top:clamp(38px,5vw,76px); color:#999; font-size:14px; }.breadcrumb a:first-child { color:#aaa; font-size:21px; }.breadcrumb>i { color:#bbb; font-size:14px; }.reservation-layout { display:grid; grid-template-columns:270px minmax(0,1fr); align-items:start; gap:clamp(60px,7vw,120px); padding-top:clamp(30px,3vw,52px); }.side-menu { display:flex; flex-direction:column; gap:28px; }.side-box { padding:25px 18px; border-radius:var(--radius); background:var(--cream); }.side-box h2 { padding:0 0 16px; border-bottom:1px solid #d9d6ce; color:var(--green); font-family:"noto_sans_s"; font-size:21px; }.side-box ul { padding-top:12px; }.side-box li+li { margin-top:5px; }.side-box li a { display:flex; align-items:center; justify-content:space-between; min-height:46px; padding:0 10px; border-radius:8px; font-family:"noto_sans_m"; font-size:16px; }.side-box li a.is-active,.side-box li a:hover { background:#e4e3db; color:var(--green); }.side-notice li { position:relative; padding-left:12px; font-size:13px; line-height:1.65; }.side-notice li::before { position:absolute; left:0; content:"·"; }.side-contact strong { display:block; margin-top:17px; font-family:"noto_sans_s"; font-size:18px; }.side-contact p { margin-top:10px; font-size:14px; }
+.reservation-page{ 
+  padding-top:80px;
+}
+
+.breadcrumb{ 
+  display:flex; 
+  align-items:center; 
+  gap:15px; 
+  padding-top:clamp(38px,5vw,76px); 
+  color:#999; 
+  font-size:14px;
+}
+
+.breadcrumb a:first-child{ 
+  color:#aaa; 
+  font-size:21px;
+}
+
+.breadcrumb > i{ 
+  color:#bbb; 
+  font-size:14px;
+}
+
+.reservation-layout{ 
+  display:grid; 
+  grid-template-columns:270px minmax(0,1fr); 
+  align-items:start; 
+  gap:clamp(60px,7vw,120px); 
+  padding-top:clamp(30px,3vw,52px);
+}
+
+.side-menu{ 
+  display:flex; 
+  flex-direction:column; 
+  gap:28px;
+}
+
+.side-box{ 
+  padding:25px 18px; 
+  border-radius:var(--radius); 
+  background:var(--cream);
+}
+
+.side-box h2{ 
+  padding:0 0 16px; 
+  border-bottom:1px solid #d9d6ce; 
+  color:var(--green); 
+  font-family:"noto_sans_s"; 
+  font-size:21px;
+}
+
+.side-box ul{ 
+  padding-top:12px;
+}
+
+.side-box li + li{ 
+  margin-top:5px;
+}
+
+.side-box li a{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  min-height:46px; 
+  padding:0 10px; 
+  border-radius:8px; 
+  font-family:"noto_sans_m"; 
+  font-size:16px;
+}
+
+.side-box li a.is-active,.side-box li a:hover{ 
+  background:#e4e3db; 
+  color:var(--green);
+}
+
+.side-notice li{ 
+  position:relative; 
+  padding-left:12px; 
+  font-size:13px; 
+  line-height:1.65;
+}
+
+.side-notice li::before{ 
+  position:absolute; 
+  left:0; 
+  content:"·";
+}
+
+.side-contact strong{ 
+  display:block; 
+  margin-top:17px; 
+  font-family:"noto_sans_s"; 
+  font-size:18px;
+}
+
+.side-contact p{ 
+  margin-top:10px; 
+  font-size:14px;
+}
+
 /* heading / step */
-.page-heading { display:flex; align-items:center; justify-content:space-between; gap:25px; }.page-heading h2 { font-family:"noto_sans_s"; font-size:clamp(32px,3vw,43px); letter-spacing:-2px; }.page-heading p { margin-top:6px; font-size:18px; }.guide-button { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-width:144px; height:48px; border-radius:8px; background:var(--green); color:#fff; font-family:"noto_sans_m"; }.guide-button i { font-size:19px; }.reservation-steps { display:flex; align-items:center; justify-content:center; gap:clamp(18px,3vw,52px); margin:54px 0 36px; }.reservation-steps li { display:flex; align-items:center; gap:13px; color:#222; font-family:"noto_sans_m"; font-size:15px; white-space:nowrap; }.reservation-steps li+li::before { width:clamp(35px,5vw,85px); height:1px; margin-right:clamp(10px,2vw,28px); background:#ddd; content:""; }.reservation-steps b { display:grid; width:38px; height:38px; place-items:center; border:1px solid #ddd; border-radius:50%; font-family:"noto_sans_m"; font-weight:400; }.reservation-steps .is-active b { border-color:var(--green); background:var(--green); color:#fff; }
+.page-heading{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  gap:25px;
+}
+
+.page-heading h2{ 
+  font-family:"noto_sans_s"; 
+  font-size:clamp(32px,3vw,43px); 
+  letter-spacing:-2px;
+}
+
+.page-heading p{ 
+  margin-top:6px; 
+  font-size:18px;
+}
+
+.guide-button{ 
+  display:inline-flex; 
+  align-items:center; 
+  justify-content:center; 
+  gap:9px; 
+  min-width:144px; 
+  height:48px; 
+  border-radius:8px; 
+  background:var(--green); 
+  color:#fff; 
+  font-family:"noto_sans_m";
+}
+
+.guide-button i{ 
+  font-size:19px;
+}
+
+.reservation-steps{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  gap:clamp(18px,3vw,52px); 
+  margin:54px 0 36px;
+}
+
+.reservation-steps li{ 
+  display:flex; 
+  align-items:center; 
+  gap:13px; 
+  color:#222; 
+  font-family:"noto_sans_m"; 
+  font-size:15px; 
+  white-space:nowrap;
+}
+
+.reservation-steps li + li::before{ 
+  width:clamp(35px,5vw,85px); 
+  height:1px; 
+  margin-right:clamp(10px,2vw,28px); 
+  background:#ddd; 
+  content:"";
+}
+
+.reservation-steps b{ 
+  display:grid; 
+  width:38px; 
+  height:38px; 
+  place-items:center; 
+  border:1px solid #ddd; 
+  border-radius:50%; 
+  font-family:"noto_sans_m"; 
+  font-weight:400;
+}
+
+.reservation-steps .is-active b{ 
+  border-color:var(--green); 
+  background:var(--green); 
+  color:#fff;
+}
+
 /* cards and controls */
-.reservation-body { display:grid; grid-template-columns:minmax(340px,390px) minmax(0,1fr); gap:28px; }.reservation-form-area { display:flex; flex-direction:column; gap:20px; }.form-card,.cake-picker,.order-note { border-radius:var(--radius); background:var(--cream); }.form-card { padding:22px; }.form-card h3,.cake-picker>h3 { font-family:"noto_sans_s"; font-size:20px; }.form-card h3 em { color:#555; font-family:"noto_sans_r"; font-size:13px; font-style:normal; }.date-fields { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:42px; }.field { position:relative; display:flex; align-items:center; height:42px; border:1px solid #d3d1ca; border-radius:6px; background:#fff; }.field input { width:100%; height:100%; padding:0 38px 0 12px; color:#333; font-size:13px; }.field input::placeholder,.customer-fields input::placeholder { color:#aaa; }.field i { position:absolute; right:12px; color:#888; font-size:16px; pointer-events:none; }.store-search { display:flex; gap:10px; margin-top:30px; }.store-search .field { flex:1; }.store-search button,.change-store { min-width:92px; border-radius:6px; background:var(--green); color:#fff; font-family:"noto_sans_m"; font-size:14px; }.selected-store { display:flex; align-items:center; gap:14px; margin-top:22px; }.store-photo { flex:0 0 112px; height:82px; overflow:hidden; border-radius:7px; background:#ddd; }.store-photo img { width:100%; height:100%; object-fit:cover; }.selected-store strong { font-family:"noto_sans_s"; font-size:15px; }.selected-store p,.selected-store small { display:block; margin-top:4px; font-size:11px; }.selected-store small { color:#555; }.selected-store small i { color:var(--green); }.change-store { width:100%; height:47px; margin-top:18px; }.customer-fields { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:28px; }.customer-fields label { font-size:12px; }.customer-fields input { width:100%; height:42px; margin-top:7px; padding:0 12px; border:1px solid #d3d1ca; border-radius:6px; background:#fff; font-size:12px; }.customer-card>p { margin-top:16px; color:#888; font-size:10px; }
+.reservation-body{ 
+  display:grid; 
+  grid-template-columns:minmax(340px,390px) minmax(0,1fr); 
+  gap:28px;
+}
+
+.reservation-form-area{ 
+  display:flex; 
+  flex-direction:column; 
+  gap:20px;
+}
+
+.form-card,
+.cake-picker,
+.order-note{ 
+  border-radius:var(--radius); 
+  background:var(--cream);
+}
+
+.form-card{ 
+  padding:22px;
+}
+
+.form-card h3,
+.cake-picker > h3{ 
+  font-family:"noto_sans_s"; 
+  font-size:20px;
+}
+
+.form-card h3 em{ 
+  color:#555; 
+  font-family:"noto_sans_r"; 
+  font-size:13px; 
+  font-style:normal;
+}
+
+.date-fields{ 
+  display:grid; 
+  grid-template-columns:repeat(2, 1fr); 
+  gap:16px; 
+  width: 100%;
+  margin-top:42px;
+}
+
+.field{ 
+  min-width: 0;
+  position:relative; 
+  display:flex; 
+  align-items:center; 
+  height:42px; 
+  border:1px solid #d3d1ca; 
+  border-radius:6px; 
+  background:#fff;
+}
+
+.field input{ 
+  width:100%; 
+  height:48px; 
+  padding:0 14px; 
+  color:#878787; 
+  font-size:13px;
+}
+
+.field input::placeholder,
+.customer-fields input::placeholder{ 
+  color:#878787;
+}
+
+.field i{ 
+  position:absolute; 
+  right:12px; 
+  color:#888; 
+  font-size:16px; 
+  pointer-events:none;
+}
+
+.store-search{ 
+  display:flex; 
+  gap:10px; 
+  margin-top:30px;
+}
+
+.store-search .field{ 
+  flex:1;
+}
+
+.store-search button,
+.change-store{ 
+  min-width:92px; 
+  border-radius:6px; 
+  background:var(--green); 
+  color:#fff; 
+  font-family:"noto_sans_m"; 
+  font-size:14px;
+}
+
+.selected-store{ 
+  display:flex; 
+  align-items:center; 
+  gap:14px; 
+  margin-top:22px;
+}
+
+.store-photo{ 
+  flex:0 0 112px; 
+  height:82px; 
+  overflow:hidden; 
+  border-radius:7px; 
+  background:#ddd;
+}
+
+.store-photo img{ 
+  width:100%; 
+  height:100%; 
+  object-fit:cover;
+}
+
+.selected-store strong{ 
+  font-family:"noto_sans_s"; 
+  font-size:15px;
+}
+
+.selected-store p,
+.selected-store small{ 
+  display:block; 
+  margin-top:4px; 
+  font-size:11px;
+}
+
+.selected-store small{ 
+  color:#555;
+}
+
+.selected-store small i{ 
+  color:var(--green);
+}
+
+.change-store{ 
+  width:100%; 
+  height:47px; 
+  margin-top:18px;
+}
+
+.customer-fields{ 
+  display:grid; 
+  grid-template-columns:1fr 1fr; 
+  gap:12px; 
+  margin-top:28px;
+}
+
+.customer-fields label{ 
+  font-size:12px;
+}
+
+.customer-fields input{ 
+  width:100%; 
+  height:42px; 
+  margin-top:7px; 
+  padding:0 12px; 
+  border:1px solid #d3d1ca; 
+  border-radius:6px; 
+  background:#fff; 
+  font-size:12px;
+}
+
+.customer-card > p{ 
+  margin-top:16px; 
+  color:#888; 
+  font-size:10px;
+}
+
 /* cake picker */
-.cake-picker { padding:22px; }.cake-tabs { display:flex; flex-wrap:wrap; gap:10px 25px; margin-top:14px; }.cake-tabs a { display:block; padding:5px 0; font-family:"noto_sans_m"; font-size:13px; white-space:nowrap; }.cake-tabs a.is-active { padding:5px 12px; border-radius:16px; background:var(--green); color:#fff; }.cake-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:16px; margin-top:24px; }.cake-card { position:relative; height:100%; padding:10px; border-radius:12px; background:#f4ead2; }.cake-image { position:relative; display:flex; align-items:center; justify-content:center; height:clamp(115px,9vw,165px); }.cake-image img { width:90%; height:90%; object-fit:contain; }.cake-image span { position:absolute; z-index:1; top:0; left:0; padding:3px 8px; border:1px solid #ff8b6d; border-radius:4px; background:#ffede6; color:#ff7958; font-size:10px; }.cake-card h4 { overflow:hidden; margin-top:8px; font-family:"noto_sans_m"; font-size:13px; line-height:1.35; text-overflow:ellipsis; white-space:nowrap; }.cake-card strong { display:block; margin-top:3px; font-family:"noto_sans_s"; font-size:15px; }.cake-card button { position:absolute; right:10px; bottom:10px; color:var(--green); font-size:16px; }.pagination { display:flex; justify-content:center; gap:12px; margin-top:35px; }.pagination a { display:grid; width:28px; height:28px; place-items:center; border:1px solid #d6d6d6; border-radius:6px; font-family:"noto_sans_m"; font-size:13px; }.pagination a.is-active { border-color:var(--green); background:var(--green); color:#fff; }.more-cakes { display:none; }.order-note { display:flex; align-items:center; gap:28px; margin-top:28px; padding:30px; }.order-note>i { color:var(--green); font-size:50px; }.order-note h3 { font-family:"noto_sans_s"; font-size:20px; }.order-note p { margin-top:7px; font-size:14px; line-height:1.65; }
+.cake-picker{ 
+  padding:22px;
+}
+
+.cake-tabs{ 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:10px 25px; 
+  margin-top:14px;
+}
+
+.cake-tabs a{ 
+  display:block; 
+  padding:5px 0; 
+  font-family:"noto_sans_m"; 
+  font-size:13px; 
+  white-space:nowrap;
+}
+
+.cake-tabs a.is-active{ 
+  padding:5px 12px; 
+  border-radius:16px; 
+  background:var(--green); 
+  color:#fff;
+}
+
+.cake-grid{ 
+  display:grid; 
+  grid-template-columns:repeat(5,minmax(0,1fr)); 
+  gap:16px; 
+  margin-top:24px;
+}
+
+.cake-card{ 
+  position:relative; 
+  height:100%; 
+  padding:10px; 
+  border-radius:12px; 
+  background:#f4ead2;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.cake-card:hover{
+  transform: translateY(-5px); 
+  box-shadow: 0 14px 25px rgba(32,48,37,.12);
+}
+
+.cake-image{ 
+  position:relative; 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  height:clamp(115px,9vw,165px);
+}
+
+.cake-image img{ 
+  width:90%; 
+  height:90%; 
+  object-fit:contain;
+}
+
+.cake-image span{ 
+  position:absolute; 
+  z-index:1; 
+  top:0; 
+  left:0; 
+  padding:3px 8px; 
+  border:1px solid #ff8b6d; 
+  border-radius:4px; 
+  background:#ffede6; 
+  color:#ff7958; 
+  font-size:10px;
+}
+
+.cake-card h4{ 
+  overflow:hidden; 
+  margin-top:8px; 
+  font-family:"noto_sans_m"; 
+  font-size:13px; 
+  line-height:1.35; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+
+.cake-card strong{ 
+  display:block; 
+  margin-top:3px; 
+  font-family:"noto_sans_s"; 
+  font-size:15px;
+}
+
+.cake-card button{ 
+  position:absolute; 
+  right:10px; 
+  bottom:10px; 
+  color:var(--green); 
+  font-size:16px;
+}
+
+.pagination{ 
+  display:flex; 
+  justify-content:center; 
+  gap:12px; 
+  margin-top:35px;
+}
+
+.pagination a{ 
+  display:grid; 
+  width:28px; 
+  height:28px; 
+  place-items:center; 
+  border:1px solid #d6d6d6; 
+  border-radius:6px; 
+  font-family:"noto_sans_m"; 
+  font-size:13px;
+}
+
+.pagination a.is-active{ 
+  border-color:var(--green); 
+  background:var(--green); 
+  color:#fff;
+}
+
+.more-cakes{ 
+  display:none;
+}
+
+.order-note{ 
+  display:flex; 
+  align-items:center; 
+  gap:28px; 
+  margin-top:28px; 
+  padding:30px;
+}
+
+.order-note > i{ 
+  color:var(--green); 
+  font-size:50px;
+}
+
+.order-note h3{ 
+  font-family:"noto_sans_s"; 
+  font-size:20px;
+}
+
+.order-note p{ 
+  margin-top:7px; 
+  font-size:14px; 
+  line-height:1.65;
+}
+
 /* footer */
-.site-footer { margin-top:var(--section-gap); padding:52px 0 34px; border-top:1px solid #f2f0eb; }.footer-top { display:flex; align-items:center; justify-content:space-between; gap:40px; }.brand-values { display:grid; grid-template-columns:repeat(4,1fr); }.brand-values li { display:flex; align-items:center; gap:14px; min-width:190px; padding-right:28px; }.brand-values li+li { padding-left:28px; border-left:1px solid var(--line); }.brand-values i { color:var(--green); font-size:38px; }.brand-values strong { font-family:"noto_sans_s"; font-size:17px; }.brand-values p { margin-top:4px; color:#555; font-size:13px; line-height:1.5; }.footer-links { display:flex; flex-direction:column; align-items:flex-end; gap:26px; }.social-list { display:flex; gap:25px; }.social-list a { font-size:24px; }.social-list li:nth-child(1) a{color:#e73876}.social-list li:nth-child(2) a{color:#1877f2}.social-list li:nth-child(3) a{color:#f00}.social-list li:nth-child(4) a{color:#4285f4}.footer-links nav { display:flex; }.footer-links nav a { padding:0 28px; border-right:1px solid var(--line); font-family:"noto_sans_m"; font-size:16px; }.footer-links nav a:last-child { padding-right:0; border:0; }.footer-bottom { margin-top:37px; padding-top:20px; border-top:1px solid #eee; color:#999; font-size:11px; line-height:1.8; }.policy { display:flex; flex-wrap:wrap; gap:7px 20px; }.footer-bottom address { margin-top:14px; }.footer-bottom address span { margin-left:15px; }.footer-bottom p { margin-top:7px; }
-/* 1024 */
-@media(max-width:1024px){:root{--side-space:32px;--section-gap:160px}.inner{width:calc(100% - 64px)}.brand-logo{width:178px}.gnb ul{gap:18px}.gnb a{font-size:11px}.tool-link span{display:none}.tool-link i{font-size:26px}.reservation-layout{grid-template-columns:0 minmax(0,1fr);gap:0}.side-menu{display:none}.reservation-body{grid-template-columns:350px minmax(0,1fr)}.cake-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.brand-values li{min-width:0;padding-right:18px}.brand-values li+li{padding-left:18px}}
-/* tablet */
-@media(min-width:601px) and (max-width:768px){:root{--section-gap:130px}.site-header,.header-inner{height:72px}.reservation-page{padding-top:72px}.header-inner{grid-template-columns:auto 1fr auto;gap:27px}.brand-logo{width:176px}.gnb ul{justify-content:center;gap:clamp(15px,2.3vw,27px)}.mobile-menu{display:none}.breadcrumb{padding-top:30px}.reservation-layout{padding-top:22px}.page-heading h2{font-size:28px}.page-heading p{font-size:15px}.guide-button{min-width:132px;height:42px;font-size:14px}.reservation-steps{gap:20px;margin:41px 0 29px}.reservation-steps li{gap:8px;font-size:13px}.reservation-steps li+li::before{width:35px;margin-right:10px}.reservation-steps b{width:30px;height:30px}.reservation-body{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.reservation-form-area{display:contents}.form-card{min-height:258px;padding:16px;border-radius:14px}.form-card h3,.cake-picker>h3{font-size:17px}.date-fields{grid-template-columns:1fr;margin-top:31px;gap:12px}.store-search{gap:5px;margin-top:30px}.store-search button{min-width:55px;font-size:11px}.selected-store{gap:8px;margin-top:20px}.store-photo{flex-basis:87px;height:60px}.selected-store strong{font-size:11px}.selected-store p,.selected-store small{font-size:9px}.change-store{height:35px;margin-top:13px;font-size:12px}.customer-fields{grid-template-columns:1fr;margin-top:25px;gap:13px}.customer-card>p{font-size:8px}.cake-picker{grid-column:1/-1;margin-top:30px;padding:17px;border-radius:14px}.cake-tabs{gap:10px 26px}.cake-tabs a{font-size:13px}.cake-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:23px}.cake-card{padding:9px}.cake-image{height:135px}.cake-card h4{font-size:13px;white-space:normal}.cake-card strong{font-size:14px}.pagination{margin-top:30px}.order-note{margin-top:50px;padding:24px;gap:21px}.order-note>i{font-size:42px}.order-note h3{font-size:17px}.order-note p{font-size:12px}.site-footer{margin-top:150px;padding:42px 0 26px}.footer-top{flex-direction:column-reverse;gap:48px}.brand-values{width:100%}.footer-links{flex-direction:row-reverse;align-items:center;gap:42px}.footer-bottom{margin-top:34px}}
-/* mobile */
-@media(max-width:600px){:root{--side-space:16px;--section-gap:80px}.site-header,.header-inner{height:64px}.reservation-page{padding-top:64px}.header-inner{display:flex;justify-content:space-between;width:calc(100% - 32px)}.brand-logo{width:145px}.gnb{display:none}.tool-link{min-width:0}.tool-link+.tool-link{margin-left:15px}.tool-link i{font-size:20px}.tool-link:nth-child(3){display:none}.mobile-menu{display:block;margin-left:16px;font-size:24px}.inner{width:calc(100% - 32px)}.breadcrumb{gap:10px;padding-top:38px;font-size:12px}.breadcrumb a:first-child{font-size:15px}.breadcrumb>i{font-size:11px}.reservation-layout{padding-top:28px}.page-heading{align-items:flex-start}.page-heading h2{font-size:20px;letter-spacing:-1px}.page-heading p{margin-top:2px;font-size:12px}.guide-button{min-width:108px;height:29px;margin-top:20px;border-radius:4px;font-size:11px}.guide-button i{font-size:14px}.reservation-steps{gap:0;justify-content:space-between;margin:34px 0 32px}.reservation-steps li{position:relative;flex-direction:column;gap:3px;font-size:9px}.reservation-steps li+li::before{position:absolute;right:100%;bottom:20px;width:33px;margin-right:11px}.reservation-steps b{width:15px;height:15px;font-size:9px}.reservation-body{display:flex;flex-direction:column;gap:0}.reservation-form-area{display:contents}.form-card{padding:0;border-radius:0;background:transparent}.form-card h3,.cake-picker>h3{font-size:14px}.date-card{order:0}.date-fields{grid-template-columns:1fr;margin-top:9px;gap:10px}.field{height:38px;border-radius:4px}.field input{font-size:11px}.store-card{order:1;margin-top:31px}.store-search{margin-top:9px}.store-search .field{height:31px}.store-search button{min-width:80px;border-radius:4px;font-size:11px}.selected-store{gap:22px;margin-top:11px}.store-photo{flex-basis:129px;height:84px;border-radius:5px}.selected-store strong{font-size:13px}.selected-store p,.selected-store small{font-size:10px}.change-store{height:35px;margin-top:10px;border-radius:3px;font-size:12px}.customer-card{order:2;margin-top:31px}.customer-card h3 em{display:none}.customer-fields{grid-template-columns:1fr;margin-top:8px;gap:12px}.customer-fields label{font-size:12px}.customer-fields input{height:36px;margin-top:6px;border-radius:4px;font-size:11px}.customer-card>p{margin-top:10px;font-size:9px}.cake-picker{order:3;margin-top:31px;padding:0;border-radius:0;background:transparent}.cake-tabs{flex-wrap:nowrap;justify-content:space-between;gap:0;margin-top:13px;overflow-x:auto}.cake-tabs a{padding:4px 8px;font-size:10px}.cake-tabs a.is-active{padding:4px 12px}.cake-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 16px;margin-top:15px}.cake-grid li:nth-child(n+5){display:none}.cake-card{padding:9px;border-radius:14px}.cake-image{height:118px}.cake-card h4{margin-top:6px;font-size:12px;white-space:normal}.cake-card strong{margin-top:1px;font-size:14px}.cake-card button{right:10px;bottom:10px;font-size:16px}.pagination{display:none}.more-cakes{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;height:37px;margin-top:14px;border-radius:4px;background:var(--green);color:#fff;font-family:"noto_sans_m";font-size:12px}.order-note{margin-top:30px;padding:13px 10px;gap:13px;border-radius:7px}.order-note>i{font-size:34px}.order-note h3{font-size:13px}.order-note p{margin-top:3px;font-size:10px;line-height:1.5}.site-footer{margin-top:104px;padding:24px 0 20px}.footer-top{flex-direction:column-reverse;align-items:stretch;gap:24px}.brand-values{grid-template-columns:repeat(4,1fr);gap:0}.brand-values li{display:block;min-width:0;padding:0 5px;text-align:center}.brand-values li+li{padding-left:5px;border-left:0}.brand-values i{display:inline-block;margin-bottom:2px;font-size:18px}.brand-values strong{display:block;font-size:9px}.brand-values p{margin-top:2px;font-size:8px;line-height:1.45}.footer-links{flex-direction:column-reverse;align-items:stretch;gap:17px}.footer-links nav{justify-content:space-between}.footer-links nav a{padding:0 13px;font-family:"noto_sans_r";font-size:11px}.footer-links nav a:first-child{padding-left:0}.social-list{gap:25px}.social-list a{font-size:17px}.footer-bottom{margin-top:18px;padding-top:0;border-top:0;font-size:8px;line-height:1.6}.policy{gap:4px 10px}.footer-bottom address{margin-top:7px}.footer-bottom address span{margin-left:7px}.footer-bottom p{margin-top:4px}}
+.site-footer{ 
+  margin-top:var(--section-gap); 
+  padding:52px 0 34px; 
+  border-top:1px solid #f2f0eb;
+}
+
+.footer-top{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  gap:40px;
+}
+
+.brand-values{ 
+  display:grid; 
+  grid-template-columns:repeat(4,1fr);
+}
+
+.brand-values li{ 
+  display:flex; 
+  align-items:center; 
+  gap:14px; 
+  min-width:190px; 
+  padding-right:28px;
+}
+
+.brand-values li + li{ 
+  padding-left:28px; 
+  border-left:1px solid var(--line);
+}
+
+.brand-values i{ 
+  color:var(--green); 
+  font-size:38px;
+}
+
+.brand-values strong{ 
+  font-family:"noto_sans_s"; 
+  font-size:17px;
+}
+
+.brand-values p{ 
+  margin-top:4px; 
+  color:#555; 
+  font-size:13px; 
+  line-height:1.5;
+}
+
+.footer-links{ 
+  display:flex; 
+  flex-direction:column; 
+  align-items:flex-end; 
+  gap:26px;
+}
+
+.social-list{
+  display:flex; 
+  gap:25px;
+}
+
+.social-list a{ 
+  font-size:24px;
+}
+
+.social-list li:nth-child(1) a{
+  color:#e73876;
+}
+
+.social-list li:nth-child(2) a{
+  color:#1877f2;
+}
+
+.social-list li:nth-child(3) a{
+  color:#f00;
+}
+
+.social-list li:nth-child(4) a{
+  color:#4285f4;
+}
+
+.footer-links nav{ 
+  display:flex;
+}
+
+.footer-links nav a{ 
+  padding:0 28px; 
+  border-right:1px solid var(--line); 
+  font-family:"noto_sans_m"; 
+  font-size:16px;
+}
+
+.footer-links nav a:last-child{ 
+  padding-right:0; 
+  border:0;
+}
+
+.footer-bottom{ 
+  margin-top:37px; 
+  padding-top:20px; 
+  border-top:1px solid #eee; 
+  color:#999; 
+  font-size:11px; 
+  line-height:1.8;
+}
+
+.policy{ 
+  display:flex; 
+  flex-wrap:wrap; 
+  gap:7px 20px;
+}
+
+.footer-bottom address{ 
+  margin-top:14px;
+}
+
+.footer-bottom address span{ 
+  margin-left:15px;
+}
+
+.footer-bottom p{ 
+  margin-top:7px;
+}
+
+/* =========================================================
+
+   1024px 이하: 공통 폭/헤더 압축
+   
+   ========================================================= */
+@media (max-width: 1024px) {
+  :root {
+    --side-space: 32px;
+    --section-gap: 160px;
+  }
+
+  .inner,
+  .header_i {
+    width: calc(100% - 64px);
+  }
+
+  /* 왼쪽 사이드 메뉴 제거, 본문 전체 폭 사용 */
+  .reservation-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 28px;
+  }
+
+  .side-menu {
+    display: none;
+  }
+
+  /* 날짜 / 매장 / 고객정보: 3열
+     케이크 목록: 다음 줄 전체 폭 */
+  .reservation-body {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .reservation-form-area {
+    display: contents;
+  }
+
+  .form-card {
+    min-height: 250px;
+    padding: 16px;
+    border-radius: 14px;
+  }
+
+  .form-card h3,
+  .cake-picker > h3 {
+    font-size: 17px;
+  }
+
+  .date-fields,
+  .customer-fields {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .date-fields {
+    margin-top: 28px;
+  }
+
+  .customer-fields {
+    margin-top: 24px;
+  }
+
+  .cake-picker {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    padding: 18px;
+  }
+
+  .cake-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .cake-image {
+    height: clamp(120px, 14vw, 145px);
+  }
+
+  .cake-card h4 {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .cake-card strong {
+    font-size: 14px;
+  }
+
+  .order-note {
+    grid-column: 1 / -1;
+    margin-top: 30px;
+    padding: 24px;
+  }
+
+  .site-footer {
+    margin-top: 140px;
+    padding: 42px 0 28px;
+  }
+
+  .footer-top {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 42px;
+  }
+
+  /* FRESH / NATURAL / WARM / TOGETHER */
+  .brand-values {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .brand-values li {
+    min-width: 0;
+    padding-right: 16px;
+  }
+
+  .brand-values li + li {
+    padding-left: 16px;
+  }
+
+  .brand-values i {
+    font-size: 32px;
+  }
+
+  .brand-values strong {
+    font-size: 15px;
+  }
+
+  .brand-values p {
+    font-size: 11px;
+  }
+
+  /* SNS + 이용 안내 링크 */
+  .footer-links {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+  }
+
+  .footer-links nav {
+    flex-wrap: wrap;
+  }
+
+  .footer-links nav a {
+    padding: 0 18px;
+    font-size: 14px;
+  }
+
+  .social-list {
+    flex: 0 0 auto;
+    gap: 20px;
+  }
+
+  .social-list a {
+    font-size: 21px;
+  }
+
+  .footer-bottom {
+    margin-top: 30px;
+    padding-top: 18px;
+  }
+}
+
+/* =========================================================
+
+   481px ~ 768px
+   
+   ========================================================= */
+@media (min-width: 481px) and (max-width: 768px) {
+  :root {
+    --side-space: 24px;
+    --section-gap: 130px;
+  }
+
+  /* header */
+  header,
+  .header_i {
+    height: 72px;
+  }
+
+  .header_i,
+  .inner {
+    width: calc(100% - 48px);
+  }
+
+  .logo {
+    width: 165px;
+  }
+
+  header nav ul {
+    gap: 14px;
+  }
+
+  header nav a {
+    font-size: 10px;
+  }
+
+  .util {
+    gap: 10px;
+  }
+
+  .util_item i {
+    font-size: 22px;
+  }
+
+  /* page */
+  .reservation-page {
+    padding-top: 72px;
+  }
+
+  .breadcrumb {
+    padding-top: 30px;
+  }
+
+  .reservation-layout {
+    padding-top: 24px;
+  }
+
+  .page-heading h2 {
+    font-size: 28px;
+  }
+
+  .page-heading p {
+    font-size: 15px;
+  }
+
+  .guide-button {
+    min-width: 126px;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  /* steps */
+  .reservation-steps {
+    gap: 10px;
+    margin: 40px 0 28px;
+  }
+
+  .reservation-steps li {
+    gap: 7px;
+    font-size: 12px;
+  }
+
+  .reservation-steps li + li::before {
+    width: 28px;
+    margin-right: 8px;
+  }
+
+  .reservation-steps b {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* form: 2열 + 고객정보 전체 폭 */
+  .reservation-body {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .reservation-body > * {
+    min-width: 0;
+  }
+
+  .form-card {
+    min-height: 250px;
+    padding: 17px;
+  }
+
+  .form-card h3,
+  .cake-picker > h3 {
+    font-size: 17px;
+  }
+
+  .date-fields,
+  .customer-fields {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .date-fields {
+    margin-top: 28px;
+  }
+
+  .customer-fields {
+    margin-top: 20px;
+  }
+
+  .customer-card {
+    grid-column: 1 / -1;
+    min-height: auto;
+  }
+
+  .store-search {
+    gap: 7px;
+    margin-top: 24px;
+  }
+
+  .store-search button {
+    min-width: 75px;
+    font-size: 12px;
+  }
+
+  .selected-store {
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .store-photo {
+    flex-basis: 95px;
+    height: 68px;
+  }
+
+  .selected-store strong {
+    font-size: 12px;
+  }
+
+  .selected-store p,
+  .selected-store small {
+    font-size: 10px;
+  }
+
+  .change-store {
+    height: 38px;
+    margin-top: 14px;
+    font-size: 12px;
+  }
+
+  /* cake: 전체 폭 + 3열 */
+  .cake-picker {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+    padding: 18px;
+  }
+
+  .cake-tabs {
+    gap: 8px 18px;
+  }
+
+  .cake-tabs a {
+    font-size: 12px;
+  }
+
+  .cake-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .cake-card {
+    padding: 9px;
+  }
+
+  .cake-image {
+    height: 135px;
+  }
+
+  .cake-card h4 {
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .cake-card strong {
+    font-size: 14px;
+  }
+
+  .order-note {
+    grid-column: 1 / -1;
+    margin-top: 26px;
+    padding: 22px;
+  }
+
+  /* footer */
+  .site-footer {
+    margin-top: 130px;
+    padding: 40px 0 28px;
+  }
+
+  .footer-top {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 34px;
+  }
+
+  .brand-values {
+    width: 100%;
+  }
+
+  .footer-links {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    width: 100%;
+  }
+
+  .footer-links nav a {
+    padding: 0 16px;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+
+   480px
+   
+   ========================================================= */
+@media (max-width: 480px) {
+  :root {
+    --side-space: 16px;
+    --section-gap: 100px;
+  }
+
+  /* header */
+  header,
+  .header_i {
+    height: 64px;
+  }
+
+  .header_i,
+  .inner {
+    width: calc(100% - 32px);
+  }
+
+  .header_i {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 145px;
+  }
+
+  header nav,
+  .util {
+    display: none;
+  }
+
+  .menu_btn {
+    display: block;
+    margin-left: 16px;
+    font-size: 24px;
+  }
+
+  /* page */
+  .reservation-page {
+    padding-top: 64px;
+  }
+
+  .breadcrumb {
+    gap: 10px;
+    padding-top: 32px;
+    font-size: 12px;
+  }
+
+  .breadcrumb a:first-child {
+    font-size: 15px;
+  }
+
+  .breadcrumb > i {
+    font-size: 11px;
+  }
+
+  .reservation-layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-top: 26px;
+  }
+
+  .side-menu {
+    display: none;
+  }
+
+  /* 가로 넘침 방지 */
+  .reservation-body,
+  .reservation-form-area,
+  .form-card,
+  .cake-picker,
+  .order-note {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  /* heading */
+  .page-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 8px;
+  }
+
+  .page-heading > * {
+    min-width: 0;
+  }
+
+  .page-heading h2 {
+    font-size: 23px;
+    letter-spacing: -1px;
+  }
+
+  .page-heading p {
+    margin-top: 3px;
+    font-size: 12px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .guide-button {
+    flex: 0 0 auto;
+    min-width: 96px;
+    height: 32px;
+    margin-top: 14px;
+    padding: 0 10px;
+    gap: 5px;
+    border-radius: 5px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .guide-button i {
+    font-size: 14px;
+  }
+
+  /* steps */
+  .reservation-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100%;
+    gap: 0;
+    margin: 30px 0 26px;
+  }
+
+  .reservation-steps li {
+    min-width: 0;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 9px;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .reservation-steps li + li::before {
+    display: none;
+  }
+
+  .reservation-steps b {
+    width: 17px;
+    height: 17px;
+    font-size: 9px;
+  }
+
+  /* form: 한 열 */
+  .reservation-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .reservation-form-area {
+    display: contents;
+  }
+
+  .form-card {
+    min-height: 0;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .form-card h3,
+  .cake-picker > h3 {
+    font-size: 15px;
+  }
+
+  /* date */
+  .date-card {
+    order: 0;
+  }
+
+  .date-fields {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 8px;
+  }
+
+  .field {
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  .field input {
+    height: 100%;
+    font-size: 11px;
+  }
+
+  /* store */
+  .store-card {
+    order: 1;
+    margin-top: 24px;
+  }
+
+  .store-search {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    gap: 8px;
+    margin-top: 8px;
+  }
+
+  .store-search .field {
+    flex: 1;
+    min-width: 0;
+    height: 38px;
+  }
+
+  .store-search button {
+    flex: 0 0 80px;
+    min-width: 0;
+    border-radius: 5px;
+    font-size: 11px;
+  }
+
+  .selected-store {
+    min-width: 0;
+    gap: 15px;
+    margin-top: 12px;
+  }
+
+  .selected-store > div {
+    min-width: 0;
+  }
+
+  .store-photo {
+    flex: 0 0 105px;
+    height: 76px;
+    border-radius: 6px;
+  }
+
+  .selected-store strong {
+    font-size: 12px;
+  }
+
+  .selected-store p,
+  .selected-store small {
+    font-size: 10px;
+  }
+
+  .change-store {
+    width: 100%;
+    height: 37px;
+    margin-top: 11px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  /* customer */
+  .customer-card {
+    order: 2;
+    margin-top: 24px;
+  }
+
+  .customer-card h3 em {
+    display: none;
+  }
+
+  .customer-fields {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  .customer-fields label {
+    font-size: 12px;
+  }
+
+  .customer-fields input {
+    width: 100%;
+    height: 38px;
+    margin-top: 6px;
+    border-radius: 5px;
+    font-size: 11px;
+  }
+
+  .customer-card > p {
+    margin-top: 10px;
+    font-size: 9px;
+  }
+
+  /* cake */
+  .cake-picker {
+    order: 3;
+    margin-top: 24px;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .cake-tabs {
+    flex-wrap: nowrap;
+    gap: 0;
+    margin-top: 13px;
+    padding-right: 12px;
+    overflow-x: auto;
+  }
+
+  .cake-tabs a {
+    flex: 0 0 auto;
+    padding: 5px 8px;
+    font-size: 10px;
+  }
+
+  .cake-tabs a.is-active {
+    padding: 5px 12px;
+  }
+
+  .cake-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 16px;
+  }
+
+  .cake-grid li:nth-child(n + 5) {
+    display: none;
+  }
+
+  .cake-card {
+    padding: 9px;
+    border-radius: 12px;
+  }
+
+  .cake-image {
+    height: 125px;
+  }
+
+  .cake-card h4 {
+    margin-top: 6px;
+    font-size: 12px;
+    white-space: normal;
+  }
+
+  .cake-card strong {
+    margin-top: 2px;
+    font-size: 14px;
+  }
+
+  .cake-card button {
+    right: 10px;
+    bottom: 10px;
+    font-size: 16px;
+  }
+
+  .pagination {
+    display: none;
+  }
+
+  .more-cakes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    height: 38px;
+    margin-top: 14px;
+    border-radius: 5px;
+    background: var(--green);
+    color: #fff;
+    font-family: "noto_sans_m";
+    font-size: 12px;
+  }
+
+  /* note */
+  .order-note {
+    order: 4;
+    margin-top: 24px;
+    padding: 15px 12px;
+    gap: 13px;
+    border-radius: 8px;
+  }
+
+  .order-note > i {
+    font-size: 34px;
+  }
+
+  .order-note h3 {
+    font-size: 13px;
+  }
+
+  .order-note p {
+    margin-top: 3px;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  /* footer */
+  .site-footer {
+    margin-top: var(--section-gap);
+    padding: 34px 0 24px;
+  }
+
+  .footer-top {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 26px;
+  }
+
+  .brand-values {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .brand-values li {
+    display: block;
+    min-width: 0;
+    padding: 0 5px;
+    text-align: center;
+  }
+
+  .brand-values li + li {
+    padding-left: 5px;
+    border-left: 0;
+  }
+
+  .brand-values i {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-size: 22px;
+  }
+
+  .brand-values strong {
+    display: block;
+    font-size: 10px;
+  }
+
+  .brand-values p {
+    margin-top: 3px;
+    font-size: 9px;
+    line-height: 1.45;
+  }
+
+  .footer-links {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 18px;
+  }
+
+  .footer-links nav {
+    justify-content: space-between;
+  }
+
+  .footer-links nav a {
+    padding: 0 10px;
+    font-family: "noto_sans_r";
+    font-size: 11px;
+  }
+
+  .footer-links nav a:first-child {
+    padding-left: 0;
+  }
+
+  .social-list {
+    gap: 22px;
+  }
+
+  .social-list a {
+    font-size: 18px;
+  }
+
+  .footer-bottom {
+    margin-top: 20px;
+    padding-top: 0;
+    border-top: 0;
+    font-size: 9px;
+    line-height: 1.65;
+  }
+
+  .policy {
+    gap: 5px 10px;
+  }
+
+  .footer-bottom address {
+    margin-top: 8px;
+  }
+
+  .footer-bottom address span {
+    margin-left: 7px;
+  }
+
+  .footer-bottom p {
+    margin-top: 5px;
+  }
+}
+
+/* =========================================================
+
+   360px
+   
+   ========================================================= */
+@media (max-width: 360px) {
+  :root {
+    --side-space: 14px;
+    --section-gap: 80px;
+  }
+
+  .header_i,
+  .inner {
+    width: calc(100% - 28px);
+  }
+
+  .logo {
+    width: 132px;
+  }
+
+  .menu_btn {
+    font-size: 22px;
+  }
+
+  .breadcrumb {
+    gap: 8px;
+    padding-top: 26px;
+    font-size: 11px;
+  }
+
+  .reservation-layout {
+    padding-top: 22px;
+  }
+
+  .page-heading {
+    gap: 6px;
+  }
+
+  .page-heading h2 {
+    font-size: 20px;
+  }
+
+  .page-heading p {
+    font-size: 10px;
+  }
+
+  .guide-button {
+    min-width: 86px;
+    height: 29px;
+    margin-top: 12px;
+    padding: 0 8px;
+    font-size: 9px;
+  }
+
+  .guide-button i {
+    font-size: 12px;
+  }
+
+  .reservation-steps {
+    margin: 26px 0 22px;
+  }
+
+  .reservation-steps li {
+    font-size: 7px;
+  }
+
+  .reservation-steps b {
+    width: 15px;
+    height: 15px;
+    font-size: 8px;
+  }
+
+  .form-card h3,
+  .cake-picker > h3 {
+    font-size: 14px;
+  }
+
+  .date-fields {
+    gap: 8px;
+  }
+
+  .store-card,
+  .customer-card,
+  .cake-picker {
+    margin-top: 20px;
+  }
+
+  .store-search {
+    gap: 7px;
+  }
+
+  .store-search button {
+    flex-basis: 70px;
+    font-size: 10px;
+  }
+
+  .selected-store {
+    gap: 10px;
+  }
+
+  .store-photo {
+    flex-basis: 82px;
+    height: 62px;
+  }
+
+  .selected-store strong {
+    font-size: 11px;
+  }
+
+  .selected-store p,
+  .selected-store small {
+    font-size: 9px;
+  }
+
+  .customer-fields {
+    gap: 10px;
+  }
+
+  .cake-tabs {
+    flex-wrap: wrap;
+    gap: 7px 10px;
+    padding-right: 0;
+    overflow: visible;
+  }
+
+  .cake-tabs a {
+    flex: 0 0 auto;
+    padding: 4px 6px;
+    font-size: 9px;
+  }
+
+  .cake-tabs a.is-active {
+    padding: 4px 10px;
+  }
+
+  .cake-grid {
+    gap: 12px;
+  }
+
+  .cake-image {
+    height: 112px;
+  }
+
+  .cake-card {
+    padding: 8px;
+  }
+
+  .cake-card h4 {
+    font-size: 11px;
+  }
+
+  .cake-card strong {
+    font-size: 13px;
+  }
+
+  .order-note {
+    margin-top: 20px;
+    padding: 13px 10px;
+  }
+
+  .site-footer {
+    padding: 28px 0 20px;
+  }
+
+  .footer-top {
+    gap: 22px;
+  }
+
+  .brand-values li {
+    padding: 0 3px;
+  }
+
+  .brand-values i {
+    font-size: 19px;
+  }
+
+  .brand-values strong {
+    font-size: 9px;
+  }
+
+  .brand-values p {
+    font-size: 8px;
+  }
+
+  .footer-links {
+    gap: 15px;
+  }
+
+  .footer-links nav a {
+    padding: 0 7px;
+    font-size: 10px;
+  }
+
+  .social-list {
+    gap: 19px;
+  }
+
+  .social-list a {
+    font-size: 17px;
+  }
+
+  .footer-bottom {
+    margin-top: 17px;
+    font-size: 8px;
+  }
+
+  .policy {
+    gap: 4px 8px;
+  }
+}

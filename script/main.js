@@ -1,5 +1,3 @@
-console.log('main.js 연결됨');
-
 $(function(){
   $('.gnb_item').on('mouseenter', function(){
     $('.gnb_item').removeClass('is-active');

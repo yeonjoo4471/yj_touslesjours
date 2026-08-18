@@ -1237,6 +1237,37 @@ footer{
   font-size: 10px;
 }
 
+.top_btn{
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #113f2e;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+  color: #fff;
+  font-size: 22px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s, transform .25s, visibility .25s;
+}
+
+.top_btn.is-show{
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.top_btn:hover{
+  background-color: #0b2d21;
+}
+
 /* =========================================================
 
    1024px
@@ -1840,6 +1871,14 @@ footer{
 
   .company_info, .copy{ 
     font-size: 9px;
+  }
+
+  .top_btn{
+    right: 16px;
+    bottom: 20px;
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
   }
 }
 

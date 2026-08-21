@@ -13,57 +13,13 @@ $(function () {
     $('.mega_menu').removeClass('is-open');
   });
 
-  $('.category_item').on('click', function () {
-    $('.category_item').removeClass('active');
-    $(this).addClass('active');
+  // 케이크 선택
+  $('.cake-tabs button').on('click', function(){
+    $('.cake-tabs button').removeClass('is-active');
+    $(this).addClass('is-active');
   });
 
-  // 히어로 섹션 슬라이드
-  const visualSwiper = new Swiper('.visual_swiper', {
-    loop: true,
-    speed: 1000,
-
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-
-    navigation: {
-      prevEl: '.visual .btn_prev',
-      nextEl: '.visual .btn_next'
-    },
-
-    pagination: {
-      el: '.visual .visual_pagination',
-      clickable: true,
-      bulletClass: 'visual_dot',
-      bulletActiveClass: 'active',
-      
-      renderBullet: function (index, className) {
-        return `
-          <button
-            type="button"
-            class="${className}"
-            aria-label="${index + 1}번 슬라이드 보기">
-          </button>
-          `;
-      }
-    }
-  });
-
-  // 필터 버튼 on/off
-  const filterButtons = document.querySelectorAll('.filter_list button');
-
-  filterButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      filterButtons.forEach((item) => {
-        item.classList.remove('active');
-      });
-      button.classList.add('active');
-    });
-  });
-
-  // pc 네비 메뉴 그대로 햄버거 메뉴로 들고 오기 
+  // pc 네비 메뉴 그대로 햄버거 메뉴로 들고 오기
   const $mobileGnbList = $('.mobile_gnb_list');
 
   $('.gnb_item').each(function () {
@@ -128,6 +84,38 @@ $(function () {
 
     $currentItem.toggleClass('is-open');
     $currentItem.find('.mobile_sub_list').stop().slideToggle(200);
+  });
+
+  // 케이크 페이지네이션
+  function setActiveCakePage($page){
+    const $pages = $('.cake_page_num');
+    const pageIndex = $pages.index($page);
+
+    $pages.removeClass('is-active').removeAttr('aria-current');
+    $page.addClass('is-active').attr('aria-current', 'page');
+
+    $('.cake_page_prev').prop('disabled', pageIndex === 0);
+    $('.cake_page_next').prop('disabled', pageIndex === $pages.length - 1);
+  }
+
+  $('.cake_page_num').on('click', function(){
+    setActiveCakePage($(this));
+  });
+
+  $('.cake_page_prev').on('click', function(){
+    const $previous = $('.cake_page_num.is-active').prevAll('.cake_page_num').first();
+
+    if($previous.length){
+      setActiveCakePage($previous);
+    }
+  });
+
+  $('.cake_page_next').on('click', function(){
+    const $next = $('.cake_page_num.is-active').nextAll('.cake_page_num').first();
+
+    if($next.length){
+      setActiveCakePage($next);
+    }
   });
 
   // 탑 버튼

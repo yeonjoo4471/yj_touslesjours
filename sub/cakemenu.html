@@ -21,14 +21,122 @@
       <!-- /logo -->
 
       <!-- navigation -->
-      <nav>
-        <ul>
-          <li><a href="#" style="color: #113f2e;">MENU</a></li>
-          <li><a href="../sub/reservation.html">CAKE RESERVATION</a></li>
-          <li><a href="#">STORE</a></li>
-          <li><a href="#">EVENT</a></li>
-          <li><a href="#">BRAND</a></li>
-          <li><a href="#">CUSTOMER</a></li>
+      <nav class="gnb">
+        <ul class="gnb_list">
+          <li class="gnb_item">
+            <a href="./cakemenu.html" style="color: #113f2e;">MENU</a>
+            <div class="mega_menu">
+              <div class="mega_inner">
+                <div class="mega_heading">
+                  <strong>MENU</strong>
+                  <p>매일 새롭게 만나는 뚜레쥬르</p>
+                </div>
+
+                <ul class="mega_list">
+                  <li><a href="#">빵</a></li>
+                  <li><a href="#">케이크</a></li>
+                  <li><a href="#">디저트</a></li>
+                  <li><a href="#">샌드위치</a></li>
+                  <li><a href="#">음료</a></li>
+                  <li><a href="#">신제품</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="gnb_item">
+            <a href="./reservation.html">CAKE RESERVATION</a>
+            <div class="mega_menu">
+              <div class="mega_inner">
+                <div class="mega_heading">
+                  <strong>CAKE RESERVATION</strong>
+                  <p>특별한 날을 위한 케이크 예약 서비스</p>
+                </div>
+
+                <ul class="mega_list">
+                  <li><a href="#">예약하기</a></li>
+                  <li><a href="#">맞춤 케이크</a></li>
+                  <li><a href="#">픽업 안내</a></li>
+                  <li><a href="#">예약 확인</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="gnb_item">
+            <a href="#">STORE</a>
+            <div class="mega_menu">
+              <div class="mega_inner">
+                <div class="mega_heading">
+                  <strong>STORE</strong>
+                  <p>가까운 뚜레쥬르 매장을 찾아보세요.</p>
+                </div>
+
+                <ul class="mega_list">
+                  <li><a href="#">매장 찾기</a></li>
+                  <li><a href="#">내 주변 매장</a></li>
+                  <li><a href="#">매장 서비스</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="gnb_item">
+            <a href="#">EVENT</a>
+            <div class="mega_menu">
+              <div class="mega_inner">
+                <div class="mega_heading">
+                  <strong>EVENT</strong>
+                  <p>뚜레쥬르의 다양한 혜택을 만나보세요.</p>
+                </div>
+
+                <ul class="mega_list">
+                  <li><a href="#">프로모션</a></li>
+                  <li><a href="#">멤버십</a></li>
+                  <li><a href="#">쿠폰</a></li>
+                  <li><a href="#">기프트카드</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="gnb_item">
+            <a href="#">BRAND</a>
+            <div class="mega_menu">
+              <div class="mega_inner">
+                <div class="mega_heading">
+                  <strong>BRAND</strong>
+                  <p>자연을 닮은 뚜레쥬르의 이야기를 소개합니다.</p>
+                </div>
+
+                <ul class="mega_list">
+                  <li><a href="#">브랜드 소개</a></li>
+                  <li><a href="#">신선한 재료.과정</a></li>
+                  <li><a href="#">ESG 경영</a></li>
+                  <li><a href="#">뉴스 &amp; 공지</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="gnb_item">
+            <a href="#">CUSTOMER</a>
+            <div class="mega_menu">
+              <div class="mega_inner">
+                <div class="mega_heading">
+                  <strong>CUSTOMER</strong>
+                  <p>궁금한 점을 빠르게 해결해드립니다.</p>
+                </div>
+
+                <ul class="mega_list">
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">공지사항</a></li>
+                  <li><a href="#">1:1 문의</a></li>
+                  <li><a href="#">고객센터</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
         </ul>
       </nav>
       <!-- /navigation -->
@@ -53,6 +161,31 @@
         <button type="button" class="menu_btn">
           <i class="bi bi-list"></i>
         </button>
+
+        <div class="menu_dim"></div>
+        <aside class="mobile_menu" aria-hidden="true">
+          <div class="mobile_menu_top">
+            <strong>MENU</strong>
+            <button type="button" class="mobile_close" aria-label="전체 메뉴 닫기">
+              <i class="bi bi-x-lg"></i>
+            </button>
+          </div>
+          <ul class="mobile_gnb_list"></ul>
+          <div class="mobile_util">
+            <button type="button" class="mobile_util_btn">
+              <i class="bi bi-search"></i>
+              <span>검색</span>
+            </button>
+            <button type="button" class="mobile_util_btn">
+              <i class="bi bi-person"></i>
+              <span>로그인</span>
+            </button>
+            <button type="button" class="mobile_util_btn">
+              <i class="bi bi-bag"></i>
+              <span>장바구니</span>
+            </button>
+          </div>
+        </aside>
       </div>
       <!-- /util -->
     </div>
@@ -177,13 +310,13 @@
 
           <div class="catalog-toolbar">
             <ul class="product-tabs" aria-label="케이크 분류">
-              <li><a class="is-active" href="#">전체</a></li>
-              <li><a href="#">생크림 케이크</a></li>
-              <li><a href="#">초코 케이크</a></li>
-              <li><a href="#">치즈 케이크</a></li>
-              <li><a href="#">과일 케이크</a></li>
-              <li><a href="#">조각 케이크</a></li>
-              <li><a href="#">미니 케이크</a></li>
+              <li><button type="button" class="is-active">전체</button></li>
+              <li><button type="button">생크림 케이크</button></li>
+              <li><button type="button">초코 케이크</button></li>
+              <li><button type="button">치즈 케이크</button></li>
+              <li><button type="button">과일 케이크</button></li>
+              <li><button type="button">조각 케이크</button></li>
+              <li><button type="button">미니 케이크</button></li>
             </ul>
             <label class="sort-select">
               <span class="sr-only">정렬 기준</span>
@@ -372,16 +505,16 @@
           </ul>
 
           <nav class="pagination" aria-label="상품 페이지">
-            <a href="#" aria-label="이전 페이지">
+            <button type="button" class="page_prev" aria-label="이전 페이지">
               <i class="bi bi-chevron-left"></i>
-            </a>
-            <a class="is-active" href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#" aria-label="다음 페이지">
-              <i class="bi bi-chevron-right"></i></a>
+            </button>
+            <button type="button" class="page_num is-active">1</button>
+            <button type="button" class="page_num">2</button>
+            <button type="button" class="page_num">3</button>
+            <button type="button" class="page_num">4</button>
+            <button type="button" class="page_num">5</button>
+            <button type="button" class="page_next" aria-label="다음 페이지">
+              <i class="bi bi-chevron-right"></i></button>
           </nav>
         </section>
       </div>
@@ -479,5 +612,12 @@
       </div>
     </div>
   </footer>
+
+  <button type="button" class="top_btn">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <script src="../script/jquery-4.0.0.min.js"></script>
+  <script src="../script/cakemenu.js"></script>
 </body>
 </html>

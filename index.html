@@ -6,6 +6,9 @@
   <title>TOUS les JOURS</title>
   <link rel="shortcut icon" href="./favicon/touslesjours.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="./css/touslesjours.css">
 </head>
 <body>
@@ -163,15 +166,30 @@
           <i class="bi bi-list"></i>
         </button>
 
-        <div class="mobile_menu">
+        <div class="menu_dim"></div>
+        <aside class="mobile_menu" aria-hidden="true">
           <div class="mobile_menu_top">
             <strong>MENU</strong>
-            <button type="button" class="mobile_close">
+            <button type="button" class="mobile_close" aria-label="전체 메뉴 닫기">
               <i class="bi bi-x-lg"></i>
             </button>
           </div>
           <ul class="mobile_gnb_list"></ul>
-        </div>
+          <div class="mobile_util">
+            <button type="button" class="mobile_util_btn">
+              <i class="bi bi-search"></i>
+              <span>검색</span>
+            </button>
+            <button type="button" class="mobile_util_btn">
+              <i class="bi bi-person"></i>
+              <span>로그인</span>
+            </button>
+            <button type="button" class="mobile_util_btn">
+              <i class="bi bi-bag"></i>
+              <span>장바구니</span>
+            </button>
+          </div>
+        </aside>
       </div>
       <!-- /util -->
     </div>
@@ -183,53 +201,127 @@
     <!-- visual -->
     <section class="visual">
       <div class="inner">
-        <div class="visual_wrap">
-          <!-- 슬라이드 -->
-          <div class="visual_slide">
-            <!-- 텍스트 -->
-            <div class="visual_content">
-              <p class="visual_sub">
-                매일매일, 특별한 행복
-              </p>
-              <h2 class="visual_title">
-                신선함이 가득한<br>
-                <span>TOUS les JOURS</span>
-              </h2>
-              <p class="visual_desc">
-                자연의 재료로 정성껏 만든 신선한 베이커리로<br>
-                당신의 일상을 더 특별하게
-              </p>
-              <a href="#" class="btn_primary">
-                자세히 보기
-                <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-            <!-- /텍스트 -->
-
-            <!-- 이벤트 카드 -->
-            <aside class="event_card">
-              <div class="event_content">
-                <p class="event_label">
-                  이달의 이벤트
+        <div class="visual_wrap swiper visual_swiper">
+          <div class="swiper-wrapper">
+            <!-- 슬라이드 1 -->
+            <div class="visual_slide swiper-slide slide_01">
+              <!-- 텍스트 -->
+              <div class="visual_content">
+                <p class="visual_sub">
+                  매일매일, 특별한 행복
                 </p>
-                <p class="event_title">
-                  카카오톡 채널 추가하고<br>
-                  쿠폰 받아요!
+                <h2 class="visual_title">
+                  신선함이 가득한<br>
+                  <span>TOUS les JOURS</span>
+                </h2>
+                <p class="visual_desc">
+                  자연의 재료로 정성껏 만든 신선한 베이커리로<br>
+                  당신의 일상을 더 특별하게
                 </p>
-                <p class="event_desc">
-                  최대 2,000원 할인
-                </p>
-                <a href="#" class="btn_event">
-                  쿠폰 받기
+                <a href="#" class="btn_primary">
+                  자세히 보기
+                  <i class="bi bi-arrow-right"></i>
                 </a>
               </div>
-              <div class="event_thumb">
-                <img src="./img/sale_card.png" alt="event">
+              <!-- /텍스트 -->
+
+              <!-- 이벤트 카드 -->
+              <aside class="event_card">
+                <div class="event_content">
+                  <p class="event_label">
+                    이달의 이벤트
+                  </p>
+                  <p class="event_title">
+                    카카오톡 채널 추가하고<br>
+                    쿠폰 받아요!
+                  </p>
+                  <p class="event_desc">
+                    최대 2,000원 할인
+                  </p>
+                  <a href="#" class="btn_event">
+                    쿠폰 받기
+                  </a>
+                </div>
+                <div class="event_thumb">
+                  <img src="./img/sale_card.png" alt="event">
+                </div>
+              </aside>
+              <!-- /이벤트 카드 -->
+            </div>
+            <!-- /슬라이드 1 -->
+
+            <!-- 슬라이드 2 -->
+            <div class="visual_slide swiper-slide slide_02">
+              <!-- 텍스트 -->
+              <div class="visual_content">
+                <p class="visual_sub">
+                  매일 새롭게 구워낸
+                </p>
+                <h2 class="visual_title">
+                  오늘의 달콤한<br>
+                  <span>TOUS les JOURS</span>
+                </h2>
+                <p class="visual_desc">
+                  갓 구운 빵과 케이크로<br>
+                  일상에 따뜻한 행복을 전합니다.
+                </p>
+                <a href="#" class="btn_primary">
+                  자세히 보기
+                  <i class="bi bi-arrow-right"></i>
+                </a>
               </div>
-            </aside>
-            <!-- /이벤트 카드 -->
+              <!-- /텍스트 -->
+            </div>
+            <!-- /슬라이드 2 -->
+
+            <!-- 슬라이드 3 -->
+            <div class="visual_slide swiper-slide slide_03">
+              <!-- 텍스트 -->
+              <div class="visual_content">
+                <p class="visual_sub">
+                  소중한 순간을 더욱 특별하게
+                </p>
+                <h2 class="visual_title">
+                  달콤함을 담은<br>
+                  <span>TOUS les JOURS</span>
+                </h2>
+                <p class="visual_desc">
+                  축하하고 싶은 모든 날에<br>
+                  마음을 전하는 케이크를 만나보세요.
+                </p>
+                <a href="#" class="btn_primary">
+                  자세히 보기
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+              <!-- /텍스트 -->
+            </div>
+            <!-- /슬라이드 3 -->
+
+            <!-- 슬라이드 4 -->
+            <div class="visual_slide swiper-slide slide_04">
+              <!-- 텍스트 -->
+              <div class="visual_content">
+                <p class="visual_sub">
+                  잠시 쉬어가는 따뜻한 시간
+                </p>
+                <h2 class="visual_title">
+                  오늘도 당신 곁에<br>
+                  <span>TOUS les JOURS</span>
+                </h2>
+                <p class="visual_desc">
+                  갓 구운 빵의 향기와 함께<br>
+                  일상에 작은 여유를 더해보세요.
+                </p>
+                <a href="#" class="btn_primary">
+                  자세히 보기
+                  <i class="bi bi-arrow-right"></i>
+                </a>
+              </div>
+              <!-- /텍스트 -->
+            </div>
+            <!-- /슬라이드 4 -->
           </div>
-          <!-- /슬라이드 -->
 
           <!-- 슬라이드 컨트롤 -->
           <div class="visual_control">
@@ -243,12 +335,7 @@
           <!-- /슬라이드 컨트롤 -->
 
           <!-- 인디케이터 -->
-          <div class="visual_pagination">
-            <button type="button" class="visual_dot active"></button>
-            <button type="button" class="visual_dot"></button>
-            <button type="button" class="visual_dot"></button>
-            <button type="button" class="visual_dot"></button>
-          </div>
+          <div class="visual_pagination"></div>
           <!-- /인디케이터 -->
         </div>
       </div>
@@ -327,12 +414,12 @@
           <div class="section_title">
             <h3>지금 가장 사랑받는 메뉴</h3>
             <ul class="category_list">
-              <li><a href="#" class="category_item active">전체</a></li>
-              <li><a href="#" class="category_item">빵</a></li>
-              <li><a href="#" class="category_item">케이크</a></li>
-              <li><a href="#" class="category_item">디저트</a></li>
-              <li><a href="#" class="category_item">샌드위치</a></li>
-              <li><a href="#" class="category_item">음료</a></li>
+              <li><button type="button" class="category_item active">전체</button></li>
+              <li><button type="button" class="category_item">빵</button></li>
+              <li><button type="button" class="category_item">케이크</button></li>
+              <li><button type="button" class="category_item">디저트</button></li>
+              <li><button type="button" class="category_item">샌드위치</button></li>
+              <li><button type="button" class="category_item">음료</button></li>
             </ul>
           </div>
           <a href="#" class="section_more">
@@ -851,7 +938,7 @@
         <div class="footer_brand">
           <!-- 로고 -->
           <a href="#">
-            <img src="./img/logo.png" alt="logo">
+            <img src="./img/logo_white.png" alt="logo">
           </a>
           <!-- /로고 -->
 
@@ -936,6 +1023,7 @@
   </button>
 
   <script src="./script/jquery-4.0.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script src="./script/main.js"></script>
 </body>
 </html>

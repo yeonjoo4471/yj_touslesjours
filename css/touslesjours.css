@@ -1358,6 +1358,10 @@ footer{
     right: 40px;
   }
 
+  .quick_menu{
+    margin-top: -70px;
+  }
+
   .quick_i{ 
     width: calc(100% - 64px);
   }

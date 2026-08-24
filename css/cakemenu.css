@@ -241,6 +241,10 @@ header{
   font-size: 10px;
 }
 
+.util_item:nth-of-type(2) i{
+  font-size: 26px;
+}
+
 .util_item i{ 
   color: #113f2e; 
   font-size: 21px; 
